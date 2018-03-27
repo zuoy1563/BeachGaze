@@ -425,7 +425,7 @@ h1, h2, h3, h4, h5, h6, figure {
 Change container size
  */
 #gtco-counter {
-    height: 1500px;
+    height: 500px;
 }
 
 #gtco-counter .display-t,
@@ -657,6 +657,7 @@ form label {
 #gtco-services,
 #gtco-subscribe,
 #gtco-footer,
+#added-footer,
 .gtco-section {
     padding: 7em 0;
     clear: both;
@@ -669,6 +670,7 @@ form label {
     #gtco-services,
     #gtco-subscribe,
     #gtco-footer,
+    #added-footer,
     .gtco-section {
         padding: 3em 0;
     }
@@ -1032,7 +1034,21 @@ form label {
     width: 100%;
 }
 
+#added-footer .gtco-footer-links {
+    padding: 0;
+    margin: 0 0 20px 0;
+    float: left;
+    width: 100%;
+}
+
 #gtco-footer .gtco-footer-links li {
+    padding: 0;
+    margin: 0 0 15px 0;
+    list-style: none;
+    line-height: 1;
+}
+
+#added-footer .gtco-footer-links li {
     padding: 0;
     margin: 0 0 15px 0;
     list-style: none;
@@ -1044,11 +1060,24 @@ form label {
     text-decoration: none;
 }
 
+#added-footer .gtco-footer-links li a {
+    color: #000;
+    text-decoration: none;
+}
+
 #gtco-footer .gtco-footer-links li a:hover {
     text-decoration: underline;
 }
 
+#added-footer .gtco-footer-links li a:hover {
+    text-decoration: underline;
+}
+
 #gtco-footer .gtco-widget {
+    margin-bottom: 30px;
+}
+
+#added-footer .gtco-widget {
     margin-bottom: 30px;
 }
 
@@ -1060,15 +1089,23 @@ form label {
     text-transform: uppercase;
 }
 
+#added-footer .gtco-widget h3 {
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
 @media screen and (max-width: 768px) {
-    #gtco-footer .copyright .pull-left,
-    #gtco-footer .copyright .pull-right {
+    #added-footer .copyright .pull-left,
+    #added-footer .copyright .pull-right {
         float: none !important;
         text-align: center;
     }
 }
 
-#gtco-footer .copyright .block {
+#added-footer .copyright .block {
     display: block;
 }
 

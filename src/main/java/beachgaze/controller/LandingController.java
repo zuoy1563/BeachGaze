@@ -23,11 +23,6 @@ public class LandingController {
         return "home/about";
     }
 
-    @RequestMapping("/contact")
-    public String contact(Map<String, Object> model) {
-        return "home/contact";
-    }
-
     @RequestMapping("/statistics")
     public String statistics(Map<String, Object> model) {
         return "home/statistics";
@@ -37,4 +32,5 @@ public class LandingController {
     public String tips(Map<String, Object> model) {
         return "home/tips";
     }
+
 }

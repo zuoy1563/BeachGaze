@@ -24,12 +24,8 @@
                 <div class="col-xs-10 text-right menu-1">
                     <ul>
                         <li><a href="/">Home</a></li>
-                        <li class="has-dropdown">
-                            <a href="/statistics">Statistics</a>
-                            <ul class="dropdown">
-                                <li><a href="#">Water Quality</a></li>
-                                <li><a href="#">Lifeguards</a></li>
-                            </ul>
+                        <li>
+                            <a href="/statistics" class="active">Statistics</a>
                         </li>
                         <li><a href="/tips">Beach Dangers</a></li>
                         <!--
@@ -42,7 +38,6 @@
                         </li>
                         -->
                         <li class="active"><a href="/about">About</a></li>
-                        <li><a href="/contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -51,7 +46,7 @@
     </nav>
 
     <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner"
-            style="background-image:url(images/homeImages/img_bg_1.png);">
+            style="background-image:url(images/homeImages/img_bg_1.jpg);">
         <div class="overlay"></div>
         <div class="gtco-container">
             <div class="row">
@@ -78,7 +73,7 @@
         </div>
     </div>
 
-    <div class="gtco-cover gtco-cover-sm" style="background-image:url(images/homeImages/img_bg_3.png)">
+    <div class="gtco-cover gtco-cover-sm" style="background-image:url(images/homeImages/img_bg_3.jpg)">
         <div class="overlay"></div>
         <div class="gtco-container">
             <div class="row">
@@ -140,39 +135,39 @@
         </div>
     </div>
 
-
-    <div id="gtco-subscribe">
-        <div class="gtco-container">
-            <div class="row animate-box">
-                <div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-                    <h2>Subscribe</h2>
-                    <p>Be the first to know about the news.</p>
+    <!--
+        <div id="gtco-subscribe">
+            <div class="gtco-container">
+                <div class="row animate-box">
+                    <div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+                        <h2>Subscribe</h2>
+                        <p>Be the first to know about the news.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="row animate-box">
-                <div class="col-md-12">
-                    <form class="form-inline">
-                        <div class="col-md-4 col-sm-4">
-                            <div class="form-group">
-                                <label for="email" class="sr-only">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="Your email">
+                <div class="row animate-box">
+                    <div class="col-md-12">
+                        <form class="form-inline">
+                            <div class="col-md-4 col-sm-4">
+                                <div class="form-group">
+                                    <label for="email" class="sr-only">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Your email">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4 col-sm-4">
-                            <div class="form-group">
-                                <label for="name" class="sr-only">Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Your name">
+                            <div class="col-md-4 col-sm-4">
+                                <div class="form-group">
+                                    <label for="name" class="sr-only">Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Your name">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4 col-sm-4">
-                            <button type="submit" class="btn btn-default btn-block">Subscribe</button>
-                        </div>
-                    </form>
+                            <div class="col-md-4 col-sm-4">
+                                <button type="submit" class="btn btn-default btn-block">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
+    -->
     <div th:replace="fragments/footer :: footer">...</div>
 </div>
 
