@@ -11,11 +11,6 @@ public class LandingController {
         return "home/index";
     }
 
-    @RequestMapping("/services")
-    public String services() {
-        return "home/services";
-    }
-
     @RequestMapping("/about")
     public String about() {
         return "home/about";
