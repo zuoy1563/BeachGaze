@@ -33,4 +33,9 @@ public class LandingController {
         return "home/tips";
     }
 
+    @RequestMapping("/lifeguards")
+    public String lifeguards(Map<String, Object> model) {
+        return "home/lifeguards";
+    }
+
 }

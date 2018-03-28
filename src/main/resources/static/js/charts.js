@@ -19,6 +19,9 @@ function plot() {
                     series: {
                         marker: {
                             enabled: false
+                        },
+                        label: {
+                            enabled: false
                         }
                     }
                 },
