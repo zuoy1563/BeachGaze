@@ -1,4 +1,4 @@
-##BeachGaze by Guardians
+<h2>BeachGaze by Guardians</h2>
 
 Members of Guardians
 - Rohandas Velekat Ramadas
