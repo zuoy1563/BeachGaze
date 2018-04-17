@@ -16,43 +16,7 @@
 
 <div id="page">
     <nav class="gtco-nav" role="navigation">
-        <div class="gtco-container">
-            <div class="row">
-                <div class="col-xs-5">
-                    <div class="row">
-                        <div class="col-xs-1">
-                            <img src="images/homeImages/guardians_logo_head.png" width="20px" height="24px"/>
-                        </div>
-                        <div class="col-xs-4">
-                            <div id="gtco-logo">
-                                <a href="/">BeachGaze</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-7 text-right menu-1">
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li>
-                            <a href="/statistics">Statistics</a>
-                        </li>
-                        <li><a href="/tips">Beach Dangers</a></li>
-                        <li class="active"><a href="/lifeguards">Patrolled beaches</a></li>
-                        <!--
-                        <li class="has-dropdown">
-                            <a href="/services">Services</a>
-                            <ul class="dropdown">
-                                <li><a href="#">Beach List</a></li>
-                                <li><a href="#">Find a hospital</a></li>
-                            </ul>
-                        </li>
-                        -->
-                        <li><a href="/about">About</a></li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
+        <div th:include="fragments/navbar"></div>
     </nav>
     <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner"
             style="background-image:url(images/homeImages/img_bg_1.jpg);">

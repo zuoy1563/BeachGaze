@@ -97,13 +97,28 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .gtco-nav {
-    position: absolute;
+    position: fixed;
+    background:rgba(0,0,0,0);
     top: 0;
     margin: 0;
-    padding: 0;
     width: 100%;
     padding: 40px 0;
     z-index: 1001;
+}
+
+.gtco-nav.active {
+    margin-top: 0px;
+    padding-top: 20px;
+    top: 0;
+    height: 60px;
+    background:rgba(0,0,0,0.85);
+    transition: background 1s;
+    /* Firefox 4 */
+    -moz-transition:background 1s;
+    /* Safari and Chrome */
+    -webkit-transition:background 1s;
+    /* Opera */
+    -o-transition:background 1s;
 }
 
 @media screen and (max-width: 768px) {
@@ -147,7 +162,7 @@ h1, h2, h3, h4, h5, h6, figure {
     font-size: 14px;
     padding: 30px 10px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.7);
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s;
@@ -341,7 +356,20 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .gtco-cover {
-    height: 800px;
+    background-position: center center;
+    background-size:cover;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+.gtco-cover-about {
+    height: 900px;
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
@@ -355,7 +383,17 @@ h1, h2, h3, h4, h5, h6, figure {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.gtco-cover-about a {
+    color: rgba(255, 255, 255, 0.7);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 .gtco-cover a:hover {
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+.gtco-cover-about a:hover {
     color: white;
     border-bottom: 1px solid white;
 }
@@ -372,7 +410,24 @@ h1, h2, h3, h4, h5, h6, figure {
 
 }
 
+.gtco-cover-about .overlay {
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* color covers on*/
+    background: rgba(194, 194, 194, 0.3);
+
+}
+
 .gtco-cover > .gtco-container {
+    position: relative;
+    z-index: 10;
+}
+
+.gtco-cover-about > .gtco-container {
     position: relative;
     z-index: 10;
 }
@@ -383,8 +438,21 @@ h1, h2, h3, h4, h5, h6, figure {
     }
 }
 
+@media screen and (max-width: 768px) {
+    .gtco-cover-about {
+        height: 600px;
+    }
+}
+
 .gtco-cover .display-t,
 .gtco-cover .display-tc {
+    height: 900px;
+    display: table;
+    width: 100%;
+}
+
+.gtco-cover-about .display-t,
+.gtco-cover-about .display-tc {
     height: 900px;
     display: table;
     width: 100%;
@@ -397,12 +465,29 @@ h1, h2, h3, h4, h5, h6, figure {
     }
 }
 
+@media screen and (max-width: 768px) {
+    .gtco-cover-about .display-t,
+    .gtco-cover-about .display-tc {
+        height: 600px;
+    }
+}
+
 .gtco-cover.gtco-cover-sm {
+    height: 600px;
+}
+
+.gtco-cover-about.gtco-cover-sm {
     height: 600px;
 }
 
 @media screen and (max-width: 768px) {
     .gtco-cover.gtco-cover-sm {
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .gtco-cover-about.gtco-cover-sm {
         height: 400px;
     }
 }
@@ -414,9 +499,23 @@ h1, h2, h3, h4, h5, h6, figure {
     width: 100%;
 }
 
+.gtco-cover-about.gtco-cover-sm .display-t,
+.gtco-cover-about.gtco-cover-sm .display-tc {
+    height: 600px;
+    display: table;
+    width: 100%;
+}
+
 @media screen and (max-width: 768px) {
     .gtco-cover.gtco-cover-sm .display-t,
     .gtco-cover.gtco-cover-sm .display-tc {
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .gtco-cover-about.gtco-cover-sm .display-t,
+    .gtco-cover-about.gtco-cover-sm .display-tc {
         height: 400px;
     }
 }
@@ -568,7 +667,8 @@ form label {
 
 #gtco-header .display-tc,
 #gtco-counter .display-tc,
-.gtco-cover .display-tc {
+.gtco-cover .display-tc,
+.gtco-cover-about .display-tc{
     display: table-cell !important;
     vertical-align: middle;
 }
@@ -577,7 +677,9 @@ form label {
 #gtco-counter .display-tc h1,
 #gtco-counter .display-tc h2,
 .gtco-cover .display-tc h1,
-.gtco-cover .display-tc h2 {
+.gtco-cover-about .display-tc h1,
+.gtco-cover .display-tc h2,
+.gtco-cover-about .display-tc h2{
     margin: 0;
     padding: 0;
     color: white;
@@ -586,7 +688,8 @@ form label {
 
 #gtco-header .display-tc h1,
 #gtco-counter .display-tc h1,
-.gtco-cover .display-tc h1 {
+.gtco-cover .display-tc h1,
+.gtco-cover-about .display-tc h1{
     margin-bottom: 0px;
     font-size: 70px;
     line-height: 1.5;
@@ -595,14 +698,16 @@ form label {
 @media screen and (max-width: 768px) {
     #gtco-header .display-tc h1,
     #gtco-counter .display-tc h1,
-    .gtco-cover .display-tc h1 {
+    .gtco-cover .display-tc h1,
+    .gtco-cover-about .display-tc h1{
         font-size: 40px;
     }
 }
 
 #gtco-header .display-tc h2,
 #gtco-counter .display-tc h2,
-.gtco-cover .display-tc h2 {
+.gtco-cover .display-tc h2,
+.gtco-cover-about .display-tc h2{
     font-size: 20px;
     line-height: 1.5;
     margin-bottom: 30px;
@@ -1615,6 +1720,15 @@ font color in buttons
 
 .js .animate-box {
     opacity: 0;
+}
+
+#map_wrapper {
+    height: 400px;
+}
+
+#map_canvas {
+    width: 100%;
+    height: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

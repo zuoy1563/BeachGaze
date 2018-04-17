@@ -24,6 +24,11 @@ public class BeachController {
         return new HashSet<>(beachRepository.findAll());
     }
 
+    @RequestMapping(value = "beaches/{id}", method = RequestMethod.GET)
+    public Beach details(@PathVariable Long id) {
+        return beachRepository.findById(id).orElse(new Beach());
+    }
+
     @RequestMapping(value = "beaches/{id}", method = RequestMethod.PUT)
     public Beach update(@PathVariable Long id, @RequestBody Beach beach) {
         //update beach info
@@ -41,8 +46,9 @@ public class BeachController {
     @RequestMapping(value = "beaches/{id}", method = RequestMethod.DELETE)
     public Beach delete(@PathVariable Long id) {
         //delete beach info
-        Beach beach = beachRepository.findById(id).get();
-        beachRepository.delete(beach);
+        Beach beach = beachRepository.findById(id).orElse(new Beach());
+        if (beach.getId() != null)
+            beachRepository.delete(beach);
         return beach;
     }
 }
