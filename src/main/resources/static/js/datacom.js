@@ -15,8 +15,9 @@ $(document).ready(function () {
 function refreshBeachList() {
     var list = "";
     for(i=0; i<data.length; i++){
-        list +="<dt><a href='/beaches/1'> "+data[i].name+"</a>&nbsp;&nbsp;&nbsp;Rating: " + data[i].rating + "</dt>" + "<dd>"
-            +data[i].description+"</dd>" + "<hr/>";
+        list +="<dt><a href='/beaches/" + data[i].id + "'> "+data[i].name+"</a>&nbsp;&nbsp;&nbsp;Rating: "
+            + data[i].rating + "</dt>" + "<dd>"
+            +data[i].shortDescription+"</dd>" + "<hr/>";
     }
     $("#beachList").append(list);
 }

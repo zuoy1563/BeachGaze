@@ -22,7 +22,11 @@ public class Beach {
 
     @Lob
     @Column(columnDefinition = "TEXT")
-    private String description;
+    private String shortDescription;
+
+    @Lob
+    @Column(columnDefinition = "TEXT")
+    private String longDescription;
 
     @Column
     private int rating;
@@ -33,9 +37,10 @@ public class Beach {
     public Beach() {
     }
 
-    public Beach(String name, String description, int rating) {
+    public Beach(String name, String shortDescription, String longDescription, int rating) {
         this.name = name;
-        this.description = description;
+        this.shortDescription = shortDescription;
+        this.longDescription = longDescription;
         this.rating = rating;
         this.waterQualities = new HashSet<>();
     }
@@ -56,14 +61,6 @@ public class Beach {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public int getRating() {
         return rating;
     }
@@ -78,5 +75,21 @@ public class Beach {
 
     public void setWaterQualities(Set<WaterQuality> waterQualities) {
         this.waterQualities = waterQualities;
+    }
+
+    public String getShortDescription() {
+        return shortDescription;
+    }
+
+    public void setShortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
+    }
+
+    public String getLongDescription() {
+        return longDescription;
+    }
+
+    public void setLongDescription(String longDescription) {
+        this.longDescription = longDescription;
     }
 }

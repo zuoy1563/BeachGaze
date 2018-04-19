@@ -1,9 +1,11 @@
 package beachgaze.controller;
 
+import beachgaze.model.Beach;
 import beachgaze.repository.BeachRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -44,8 +46,17 @@ public class LandingController {
     @RequestMapping("/beaches")
     public String beaches(Model model) {
         model.addAttribute("page", "beaches");
-        model.addAttribute("beaches", beachRepository.findAll());
         return "iteration2/beaches/list";
     }
 
+    @RequestMapping("/beaches/{id}")
+    public String beachDetails(@PathVariable Long id, Model model) {
+        Beach beach = beachRepository.findById(id).orElse(new Beach());
+        if (beach.getId() != null) {
+            model.addAttribute("beach", beach);
+            return "iteration2/beaches/details";
+        }
+        else
+            return "error";
+    }
 }
