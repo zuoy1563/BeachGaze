@@ -14,22 +14,22 @@ import java.util.HashSet;
 import java.util.Set;
 
 @RestController
-@RequestMapping("/api/v1/")
+@RequestMapping("/api/v1/beaches")
 public class BeachController {
     @Autowired
     private BeachRepository beachRepository;
 
-    @RequestMapping(value = "beaches", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public Set<Beach> list() {
         return new HashSet<>(beachRepository.findAll());
     }
 
-    @RequestMapping(value = "beaches/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Beach details(@PathVariable Long id) {
         return beachRepository.findById(id).orElse(new Beach());
     }
 
-    @RequestMapping(value = "beaches/{id}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     public Beach update(@PathVariable Long id, @RequestBody Beach beach) {
         //update beach info
         beach.setId(id);
@@ -43,7 +43,7 @@ public class BeachController {
         return beachRepository.save(beach);
     }
 
-    @RequestMapping(value = "beaches/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public Beach delete(@PathVariable Long id) {
         //delete beach info
         Beach beach = beachRepository.findById(id).orElse(new Beach());
