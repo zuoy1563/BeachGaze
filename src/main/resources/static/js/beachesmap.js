@@ -1,5 +1,5 @@
 function initMap() {
-    var myLatLng = {lat: 51.503454, lng: -0.119562};
+    var myLatLng = {lat: data[1].longitude, lng: data[1].latitude};
 
     var bounds = new google.maps.LatLngBounds();
 
@@ -10,12 +10,17 @@ function initMap() {
 
 
     // Multiple Markers
-    var markers = [
-        ['London Eye, London', 51.503454,-0.119562],
-        ['Palace of Westminster, London', 51.499633,-0.124755]
-    ];
+    var markers = [];
+    var infoWindowContent = [];
+
+    for(i = 0;i < data.length; i++) {
+        markers.push([data[i].name,data[i].longitude,data[i].latitude])
+        infoWindowContent.push(['<div class="info_content">' +
+        '<h3>' + data[i].name + '</h3>' + '<p>' + data[i].shortDescription + '</p>'] + '</div>')
+    }
 
     // Info Window Content
+    /*
     var infoWindowContent = [
         ['<div class="info_content">' +
         '<h3>London Eye</h3>' +
@@ -25,6 +30,7 @@ function initMap() {
         '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
         '</div>']
     ];
+    */
 
     // Display multiple markers on a map
     var infoWindow = new google.maps.InfoWindow(), marker, i;

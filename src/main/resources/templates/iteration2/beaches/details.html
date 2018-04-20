@@ -18,8 +18,7 @@
     <nav class="gtco-nav" role="navigation">
         <div th:include="fragments/navbar"></div>
     </nav>
-    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner"
-            th:style="'background:url(' + @{/images/homeImages/img_bg_1.jpg} + ');'">">
+    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner">">
         <div class="overlay"></div>
         <div class="gtco-container">
             <div class="row">
@@ -27,8 +26,6 @@
                     <div class="display-t">
                         <div class="display-tc animate-box" data-animate-effect="fadeIn">
                             <h1 >Beach Details</h1>
-                            <a class="ct-btn-scroll ct-js-btn-scroll" href="#section2" style="top: 0px; top: 0px; margin-top: 0px">
-                                <img alt="Arrow Down Icon" src="https://www.solodev.com/assets/anchor/arrow-down.png"></a>
                         </div>
                     </div>
                 </div>
@@ -55,7 +52,7 @@
     </div>
 </div>
 
-
+<div th:include="fragments/jsFooter"></div>
 <div class="gototop js-top">
     <a href="#" class="js-gotop">
         <span class="icon">

@@ -162,7 +162,7 @@ h1, h2, h3, h4, h5, h6, figure {
     font-size: 14px;
     padding: 30px 10px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.9);
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s;
@@ -170,6 +170,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .gtco-nav ul li a:hover, .gtco-nav ul li a:focus, .gtco-nav ul li a:active {
     color: white;
+    font-weight: bold;
 }
 
 .gtco-nav ul li.has-dropdown {
@@ -270,6 +271,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .gtco-nav ul li.active > a {
     color: #fff !important;
+    font-weight: bold;
 }
 
 #gtco-header,
@@ -356,6 +358,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .gtco-cover {
+    background-image:url(images/homeImages/img_bg_1.jpg);
     background-position: center center;
     background-size:cover;
     background-attachment: fixed;
@@ -1792,3 +1795,92 @@ figure {
 }
 
 /*# sourceMappingURL=style.css.map */
+.carousel-caption {
+    width: 100%;
+    background-color:#333;
+    opacity:0.8;
+    z-index:1;
+    bottom: 0px;
+    right: 0%;
+    left: 0%;
+    padding-bottom: 0px
+}
+
+.carousel-caption p {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 50px;
+}
+
+.carousel-caption ul {
+    /*
+    text-align: left;
+    padding-left: 10vm;
+    */
+    align-content: center;
+    list-style: inside;
+    padding-bottom: 50px;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400);
+.demo a {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    z-index: 2;
+    display: inline-block;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    color: #fff;
+    font : normal 400 20px/1 'Josefin Sans', sans-serif;
+    letter-spacing: .1em;
+    text-decoration: none;
+    transition: opacity .3s;
+}
+.demo a:hover {
+    opacity: .5;
+}
+
+#scroll a {
+    padding-top: 70px;
+}
+#scroll a span {
+    position: absolute;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-animation: sdb05 1.5s infinite;
+    animation: sdb05 1.5s infinite;
+    box-sizing: border-box;
+}
+@-webkit-keyframes sdb05 {
+    0% {
+        -webkit-transform: rotate(-45deg) translate(0, 0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+        opacity: 0;
+    }
+}
+@keyframes sdb05 {
+    0% {
+        transform: rotate(-45deg) translate(0, 0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(-45deg) translate(-20px, 20px);
+        opacity: 0;
+    }
+}

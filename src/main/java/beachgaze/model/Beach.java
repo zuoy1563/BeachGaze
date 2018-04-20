@@ -31,17 +31,25 @@ public class Beach {
     @Column
     private int rating;
 
+    @Column
+    private double longitude;
+
+    @Column
+    private double latitude;
+
     @OneToMany(mappedBy = "id", fetch = FetchType.EAGER)
     private Set<WaterQuality> waterQualities;
 
     public Beach() {
     }
 
-    public Beach(String name, String shortDescription, String longDescription, int rating) {
+    public Beach(String name, String shortDescription, String longDescription, int rating, double longitude, double latitude) {
         this.name = name;
         this.shortDescription = shortDescription;
         this.longDescription = longDescription;
         this.rating = rating;
+        this.longitude = longitude;
+        this.latitude = latitude;
         this.waterQualities = new HashSet<>();
     }
 
@@ -91,5 +99,21 @@ public class Beach {
 
     public void setLongDescription(String longDescription) {
         this.longDescription = longDescription;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
     }
 }
