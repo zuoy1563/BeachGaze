@@ -25,23 +25,12 @@ public class LandingController {
         return "home/about";
     }
 
-    @RequestMapping("/statistics")
-    public String statistics(Model model) {
-        model.addAttribute("page", "statistics");
-        return "home/statistics";
-    }
-
     @RequestMapping("/tips")
     public String tips(Model model) {
         model.addAttribute("page", "tips");
         return "home/tips";
     }
 
-    @RequestMapping("/lifeguards")
-    public String lifeguards(Model model) {
-        model.addAttribute("page", "lifeguards");
-        return "home/lifeguards";
-    }
 
     @RequestMapping("/beaches")
     public String beaches(Model model) {

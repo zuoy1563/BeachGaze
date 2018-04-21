@@ -1,5 +1,6 @@
 package beachgaze.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.CascadeType;
@@ -22,7 +23,7 @@ public class WaterQuality {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @DateTimeFormat(pattern = "MM/dd/yyyy")
     @Column(name = "sample_date")
     private Date date;
 
@@ -30,14 +31,15 @@ public class WaterQuality {
     private double result;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    //@JoinColumn(name = "beach_id", referencedColumnName = "id")
+    @JoinColumn(name = "beach_id", referencedColumnName = "id")
+    @JsonBackReference
     private Beach beach;
 
     public WaterQuality() {
     }
 
     public WaterQuality(String dateStr, double result, Beach beach) throws Exception {
-        SimpleDateFormat bartDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat bartDateFormat = new SimpleDateFormat("MM/dd/yyyy");
         java.util.Date date = bartDateFormat.parse(dateStr);
         java.sql.Date sqlDate = new java.sql.Date(date.getTime());
         this.date = sqlDate;

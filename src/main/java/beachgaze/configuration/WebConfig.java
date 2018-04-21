@@ -17,7 +17,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     @Value("443")
     private int serverPort;
 
-    @Value("9999")
+    @Value("8080")
     private int serverHttpPort;
 
     /**

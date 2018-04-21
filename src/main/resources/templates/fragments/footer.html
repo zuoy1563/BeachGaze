@@ -1,10 +1,13 @@
-<footer id="added-footer" role="contentinfo" style="height: 300px;" xmlns:th="http://www.w3.org/1999/xhtml">
-    <div class="gtco-container">
+<html xmlns:th="http://www.thymeleaf.org">
+<footer id="added-footer" role="contentinfo" style="height: 200px; padding-top: 0" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="container">
+    <hr/>
+    </div>
+    <div class="gtco-container" style="padding-top: 0px">
         <div class="row copyright">
             <div class="col-md-12">
                 <p class="pull-left">
-                    <img src="images/homeImages/guardians_logo.png" width="97px" height="23px"/>
-
+                <img th:src="@{/images/homeImages/guardians_logo.png}" width="97px" height="23px"/>
                     <small class="block">&copy; Guardians. All Rights Reserved.</small>
                     <small class="block">Template designed by <a href="http://FreeHTML5.co/" target="_blank">
                         FreeHTML5.co

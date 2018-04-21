@@ -25,7 +25,7 @@
                 <div class="col-md-8 col-md-offset-2 text-center">
                     <div class="display-t">
                         <div class="display-tc animate-box" data-animate-effect="fadeIn">
-                            <h1 >Beach Details</h1>
+                            <h1>Beach Details</h1>
                         </div>
                     </div>
                 </div>
@@ -35,24 +35,88 @@
     <!-- todo: contents -->
     <div class="gtco-section" id="section2">
         <div class="container">
-            <h1 th:text="${beach.name}">...</h1>
-            <p th:utext="${beach.longDescription}">...</p>
-            <b>Rating: </b> <b th:text="${beach.rating}"></b>
+            <h1 id="beachName" th:text="${beach.name}" style="display: inline">...</h1> &nbsp;&nbsp;
+            <b style="color: #f88c3a">Rating: </b> <b th:text="${beach.rating}" style="color: #f88c3a"></b>
+            <div class="row">
+                <div class="col-md-8">
+                    <p th:utext="${beach.longDescription}">...</p>
+                    <span style="display: none" id="beachId" th:text="${beach.id}"></span>
+                <div id="beachCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#beachCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#beachCarousel" data-slide-to="1"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" style="height: 400px">
+                        <div class="item active">
+                            <img th:src="@{/images/beaches/{beachId}/1.jpg(beachId=${beach.id})}" alt="Beach" style="width:100%; height: 400px">
+                        </div>
+
+                        <div class="item">
+                            <img th:src="@{/images/beaches/{beachId}/2.jpg(beachId=${beach.id})}" alt="Beach" style="width:100%; height: 400px">
+                        </div>
+
+                    </div>
+
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="javascript:void(0);" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="javascript:void(0);" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                    <hr/>
+                </div>
+                <div class="col-md-4">
+                    <div class="tooltip">When Gets Patrolled:
+                        <span class="tooltiptext">Beaches only get patrolled on weekends and public holidays.</span>
+                    </div>
+                    <br/>
+                    11 November 2017 – 15 April 2018
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div style="width: 300px;" id="weather">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <h1>Water Quality</h1>
+                    <p>Sea water quality is an important indicator for you to decide if the beach is suitable for you to
+                        take your children to swim or not.</p>
+                    <p>EPA assess short-term water quality by comparing results against a dry weather enterococci trigger (>400 org/100mL).
+                        Twice daily forecasts predict likelihood of stormwater pollution during and after rain that may cause high enterococci levels.</p>
+                    <p>In the following graph, the blue line indicates the historic results of bacteria contained in per 100mL sea
+                    water, while the red line indicates the recommended value (400 org/100mL). If a point has value of 0, it does not mean that there is no bacteria in the sea water, but
+                        there is only few bacteria so that it cannot be observed clearly.</p>
+                    <p>It is obvious that at most of time, the quality of sea water is good. However, there are some extremely
+                        big numbers shown in the historical data as well. So it is significant to check the
+                        current water quality before your journey.</p>
+                    <div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+                </div>
+                <div class="col-md-4">
+
+                </div>
+            </div>
+            <a href="/beaches">Back to List</a>
         </div>
     </div>
-    <div class="gtco-section" id="section3" style="padding-top: 0px">
-        <div class="container">
-            <h1>Water Quality</h1>
-        </div>
-    </div>
-    <div class="gtco-section" id="section4" style="padding-top: 0px">
-        <div class="container">
-            <h1>Weather</h1>
-        </div>
-    </div>
+    <div th:replace="fragments/footer :: footer">...</div>
 </div>
 
 <div th:include="fragments/jsFooter"></div>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script th:src="@{/js/charts.js}"></script>
+
 <div class="gototop js-top">
     <a href="#" class="js-gotop">
         <span class="icon">

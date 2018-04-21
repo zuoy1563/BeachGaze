@@ -60,7 +60,7 @@
                     <dl id="beachList">
                     </dl>
                 </div>
-                <div id="map" class="tab-pane fade">
+                <div id="map" class="tab-pane fade" style="height: 700px">
                     <div id="map_wrapper">
                         <div id="map_canvas" class="mapping" style="height: 700px"></div>
                     </div>
@@ -72,7 +72,9 @@
 
     </div>
     </div>
+    <div th:replace="fragments/footer :: footer">...</div>
 </div>
+
 <div th:include="fragments/jsFooter"></div>
 <script src="/js/datacom.js"></script>
 <div class="gototop js-top">

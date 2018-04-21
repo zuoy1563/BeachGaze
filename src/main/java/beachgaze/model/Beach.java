@@ -1,5 +1,7 @@
 package beachgaze.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -38,6 +40,8 @@ public class Beach {
     private double latitude;
 
     @OneToMany(mappedBy = "id", fetch = FetchType.EAGER)
+    @Column(nullable = true)
+    @JsonManagedReference
     private Set<WaterQuality> waterQualities;
 
     public Beach() {
