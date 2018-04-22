@@ -7,7 +7,7 @@
 -->
 <html>
 <head th:include="fragments/head :: headerFragment">
-    <title id="pageTitle">Beach Dangers - BeachGaze</title>
+    <title id="pageTitle">Beach List - BeachGaze</title>
     <!-- other elements you want to reference in your layout -->
 </head>
 <body>
@@ -64,6 +64,8 @@
                     <div id="map_wrapper">
                         <div id="map_canvas" class="mapping" style="height: 700px"></div>
                     </div>
+                    <div th:include="fragments/jsFooter"></div>
+                    <script th:src="@{/js/datacom.js}"></script>
                     <script async defer
                             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9vGwFSuPk-v9UKnlrNFIuTarIdUly0Ng&callback=initMap">
                     </script>
@@ -75,8 +77,7 @@
     <div th:replace="fragments/footer :: footer">...</div>
 </div>
 
-<div th:include="fragments/jsFooter"></div>
-<script src="/js/datacom.js"></script>
+
 <div class="gototop js-top">
     <a href="#" class="js-gotop">
         <span class="icon">

@@ -18,7 +18,7 @@
     <nav class="gtco-nav" role="navigation">
         <div th:include="fragments/navbar"></div>
     </nav>
-    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner">">
+    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner">
         <div class="overlay"></div>
         <div class="gtco-container">
             <div class="row">
@@ -36,7 +36,10 @@
     <div class="gtco-section" id="section2">
         <div class="container">
             <h1 id="beachName" th:text="${beach.name}" style="display: inline">...</h1> &nbsp;&nbsp;
-            <b style="color: #f88c3a">Rating: </b> <b th:text="${beach.rating}" style="color: #f88c3a"></b>
+            <div class="tooltip" style="font-weight: bold">Rating:
+                <span class="tooltiptext">According to Hazard Ratings from beachsafe.org.au. Higher is better.</span>
+            </div>
+            <b th:text="${beach.rating} + '/5'"></b>
             <div class="row">
                 <div class="col-md-8">
                     <p th:utext="${beach.longDescription}">...</p>
@@ -95,7 +98,7 @@
                     <p>In the following graph, the blue line indicates the historic results of bacteria contained in per 100mL sea
                     water, while the red line indicates the recommended value (400 org/100mL). If a point has value of 0, it does not mean that there is no bacteria in the sea water, but
                         there is only few bacteria so that it cannot be observed clearly.</p>
-                    <p>It is obvious that at most of time, the quality of sea water is good. However, there are some extremely
+                    <p>It is obvious that at most of time, the qualities of sea water are good. However, there are some extremely
                         big numbers shown in the historical data as well. So it is significant to check the
                         current water quality before your journey.</p>
                     <div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>

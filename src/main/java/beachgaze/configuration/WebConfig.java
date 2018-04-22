@@ -13,15 +13,15 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter {
-
+    /*
     @Value("443")
     private int serverPort;
 
     @Value("8080")
     private int serverHttpPort;
-
+    */
     /**
-     * 解决跨域问题
+     * Cors Settings
      * @param registry
      */
     @Override
@@ -33,6 +33,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
                 .allowCredentials(true).maxAge(3600);
     }
 
+    /*
     @Bean
     public TomcatServletWebServerFactory servletContainer() {
         TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory() {
@@ -54,11 +55,10 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     private Connector initiateHttpConnector() {
         Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
         connector.setScheme("http");
-        //需要重定向的http端口
         connector.setPort(serverHttpPort);
         connector.setSecure(false);
-        //设置重定向到https端口
         connector.setRedirectPort(serverPort);
         return connector;
     }
+    */
 }

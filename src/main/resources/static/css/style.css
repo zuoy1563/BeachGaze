@@ -449,7 +449,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .gtco-cover .display-t,
 .gtco-cover .display-tc {
-    height: 900px;
+    height: 700px;
     display: table;
     width: 100%;
 }
@@ -1843,7 +1843,7 @@ figure {
 
 #scroll a {
     padding-top: 80px;
-    bottom: -50px;
+    bottom: 0px;
 }
 #scroll a span {
     position: absolute;

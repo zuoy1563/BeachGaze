@@ -20,13 +20,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         auth
                 .inMemoryAuthentication()
                 .passwordEncoder(new MyPasswordEncoder())
-                .withUser("admin").password("admin").roles("admin");
+                .withUser("beachgaze").password("OMGuardians").roles("admin");
 
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        /*
+
         http
                 .authorizeRequests()
                 .anyRequest()
@@ -35,13 +35,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .httpBasic()
                 .and()
                 .csrf().disable();
-                */
+         /*
         http
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
                 .antMatchers("/**").permitAll()
                 .and()
                 .csrf().disable();
+                */
     }
 
 }

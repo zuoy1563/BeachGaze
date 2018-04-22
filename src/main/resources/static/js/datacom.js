@@ -14,7 +14,7 @@ function refreshBeachList(beaches) {
     var list = "";
     for(var i=0; i<beaches.length; i++){
         list +="<dt><a href='/beaches/" + beaches[i].id + "'> "+beaches[i].name+"</a>&nbsp;&nbsp;&nbsp;Rating: "
-            + beaches[i].rating + "</dt>" + "<dd>"
+            + beaches[i].rating + "/5" + "</dt>" + "<dd>"
             +beaches[i].shortDescription+"</dd>" + "<hr/>";
     }
     $("#beachList").append(list);
