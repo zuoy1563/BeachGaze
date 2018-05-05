@@ -449,7 +449,6 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .gtco-cover .display-t,
 .gtco-cover .display-tc {
-    height: 700px;
     display: table;
     width: 100%;
 }
@@ -1903,6 +1902,7 @@ figure {
     display: inline-block;
     border-bottom: 1px dotted #214a8b;
     opacity: 1;
+    z-index: 1;
     font-family: "Raleway", Arial, sans-serif;
     font-weight: 400;
     font-size: 14px;
