@@ -2,6 +2,7 @@
  * Created by Zoe on 27/3/18.
  */
 $(document).ready(function () {
+    // draw water quality chart
     var beachName = document.getElementById("beachName").innerHTML;
     var spanValue = document.getElementById("beachId").innerHTML;
     var url = '/api/v1/wq/' + spanValue;
@@ -29,7 +30,7 @@ $(document).ready(function () {
                         color:'red',
                         dashStyle:'solid',
                         value:400,
-                        width:2
+                        width:2,
                     }]
                 },
                 xAxis: {
@@ -57,26 +58,29 @@ $(document).ready(function () {
                 }]
             });
     });
+
+    // show weather widget
     var weatherurl = '';
     switch (beachName) {
-        case "Altona" : weatherurl = '<iframe style="display: block;" src="https://cdnres.willyweather.com.au/widget/loadView.html?id=46377" width="300" height="228" frameborder="0" scrolling="no"></iframe><a style="margin: -20px 0 0 0;display: block;position: relative;text-indent: -9999em;z-index: 1;height: 20px" href="https://www.willyweather.com.au/vic/melbourne/altona.html" rel="nofollow">altona weather forecast</a>';
+        case "Altona" : weatherurl = '<iframe style="display: block;" src="https://cdnres.willyweather.com.au/widget/loadView.html?id=46668" width="300" height="228" frameborder="0" scrolling="no"></iframe><a style="display: block;margin: -20px 0 0 0;z-index: 1;position: relative;height: 20px;text-indent: -9999em" href="https://www.willyweather.com.au/vic/melbourne/altona.html" rel="nofollow">altona weather</a>';
             break;
-        case "Brighton": weatherurl = '<iframe style="display: block;" src="https://cdnres.willyweather.com.au/widget/loadView.html?id=46381" width="300" height="228" frameborder="0" scrolling="no"></iframe><a style="text-indent: -9999em;z-index: 1;display: block;position: relative;height: 20px;margin: -20px 0 0 0" href="https://www.willyweather.com.au/vic/melbourne/brighton.html" rel="nofollow">brighton weather</a>';
+        case "Brighton": weatherurl = '<iframe style="display: block;" src="https://cdnres.willyweather.com.au/widget/loadView.html?id=46669" width="300" height="228" frameborder="0" scrolling="no"></iframe><a style="margin: -20px 0 0 0;position: relative;text-indent: -9999em;z-index: 1;display: block;height: 20px" href="https://www.willyweather.com.au/vic/melbourne/brighton.html" rel="nofollow">https://www.willyweather.com.au/vic/melbourne/brighton.html</a>';
             break;
-        case "Elwood": weatherurl = '<iframe style="display: block;" src="https://cdnres.willyweather.com.au/widget/loadView.html?id=46382" width="300" height="228" frameborder="0" scrolling="no"></iframe><a style="display: block;z-index: 1;text-indent: -9999em;margin: -20px 0 0 0;position: relative;height: 20px" href="https://www.willyweather.com.au/vic/melbourne/elwood.html" rel="nofollow">The latest elwood weather</a>';
+        case "Elwood": weatherurl = '<iframe style="display: block;" src="https://cdnres.willyweather.com.au/widget/loadView.html?id=46670" width="300" height="228" frameborder="0" scrolling="no"></iframe><a style="height: 20px;z-index: 1;display: block;text-indent: -9999em;margin: -20px 0 0 0;position: relative" href="https://www.willyweather.com.au/vic/melbourne/elwood.html" rel="nofollow">elwood VIC weather forecast</a>';
             break;
-        case "Port Melbourne": weatherurl = '<iframe style="display: block;" src="https://cdnres.willyweather.com.au/widget/loadView.html?id=46379" width="300" height="228" frameborder="0" scrolling="no"></iframe><a style="z-index: 1;margin: -20px 0 0 0;display: block;height: 20px;text-indent: -9999em;position: relative" href="https://www.willyweather.com.au/vic/melbourne/port-melbourne.html" rel="nofollow">port melbourne weather forecast</a>';
+        case "Port Melbourne": weatherurl = '<iframe style="display: block;" src="https://cdnres.willyweather.com.au/widget/loadView.html?id=46671" width="300" height="228" frameborder="0" scrolling="no"></iframe><a style="height: 20px;text-indent: -9999em;margin: -20px 0 0 0;display: block;z-index: 1;position: relative" href="https://www.willyweather.com.au/vic/melbourne/port-melbourne.html" rel="nofollow">WillyWeather</a>';
             break;
-        case "Sandridge": weatherurl = '<iframe style="display: block;" src="https://cdnres.willyweather.com.au/widget/loadView.html?id=46383" width="300" height="228" frameborder="0" scrolling="no"></iframe><a style="position: relative;height: 20px;margin: -20px 0 0 0;display: block;z-index: 1;text-indent: -9999em" href="https://www.willyweather.com.au/vic/melbourne/sandridge-beach.html" rel="nofollow">The latest sandridge beach weather</a>';
+        case "Sandridge": weatherurl = '<iframe style="display: block;" src="https://cdnres.willyweather.com.au/widget/loadView.html?id=46672" width="300" height="228" frameborder="0" scrolling="no"></iframe><a style="height: 20px;display: block;text-indent: -9999em;z-index: 1;position: relative;margin: -20px 0 0 0" href="https://www.willyweather.com.au/vic/melbourne/sandridge-beach.html" rel="nofollow">Sandridge Beach VIC forecast</a>';
             break;
-        case "South Melbourne": weatherurl = '<iframe style="display: block;" src="https://cdnres.willyweather.com.au/widget/loadView.html?id=46384" width="300" height="228" frameborder="0" scrolling="no"></iframe><a style="text-indent: -9999em;height: 20px;position: relative;z-index: 1;margin: -20px 0 0 0;display: block" href="https://www.willyweather.com.au/vic/melbourne/south-melbourne.html" rel="nofollow">South Melbourne Forecast</a>';
+        case "South Melbourne": weatherurl = '<iframe style="display: block;" src="https://cdnres.willyweather.com.au/widget/loadView.html?id=46673" width="300" height="228" frameborder="0" scrolling="no"></iframe><a style="z-index: 1;display: block;margin: -20px 0 0 0;height: 20px;position: relative;text-indent: -9999em" href="https://www.willyweather.com.au/vic/melbourne/south-melbourne.html" rel="nofollow">forecast for south melbourne</a>';
             break;
-        case "St Kilda": weatherurl = '<iframe style="display: block;" src="https://cdnres.willyweather.com.au/widget/loadView.html?id=46385" width="300" height="228" frameborder="0" scrolling="no"></iframe><a style="z-index: 1;position: relative;text-indent: -9999em;margin: -20px 0 0 0;display: block;height: 20px" href="https://www.willyweather.com.au/vic/melbourne/st-kilda.html" rel="nofollow">St Kilda VIC forecast</a>';
+        case "St Kilda": weatherurl = '<iframe style="display: block;" src="https://cdnres.willyweather.com.au/widget/loadView.html?id=46674" width="300" height="228" frameborder="0" scrolling="no"></iframe><a style="text-indent: -9999em;display: block;position: relative;height: 20px;margin: -20px 0 0 0;z-index: 1" href="https://www.willyweather.com.au/vic/melbourne/st-kilda.html" rel="nofollow">local weather</a>';
             break;
-        case "Williamstown": weatherurl = '<iframe style="display: block;" src="https://cdnres.willyweather.com.au/widget/loadView.html?id=46386" width="300" height="228" frameborder="0" scrolling="no"></iframe><a style="height: 20px;z-index: 1;margin: -20px 0 0 0;position: relative;display: block;text-indent: -9999em" href="https://www.willyweather.com.au/vic/melbourne/williamstown.html" rel="nofollow">williamstown\'s weather</a>';
+        case "Williamstown": weatherurl = '<iframe style="display: block;" src="https://cdnres.willyweather.com.au/widget/loadView.html?id=46675" width="300" height="228" frameborder="0" scrolling="no"></iframe><a style="height: 20px;display: block;margin: -20px 0 0 0;text-indent: -9999em;position: relative;z-index: 1" href="https://www.willyweather.com.au/vic/melbourne/williamstown.html" rel="nofollow">Weather info for Williamstown</a>';
     }
     $("#weather").append(weatherurl);
 
+    // adjust carousel functions
     $('.carousel-control.right').click(function(){ $('.carousel').carousel('next')});
     $('.carousel-control.left').click(function(){ $('.carousel').carousel('prev')});
 

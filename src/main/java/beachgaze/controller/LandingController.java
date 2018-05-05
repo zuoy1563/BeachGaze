@@ -35,11 +35,28 @@ public class LandingController {
     @RequestMapping("/beaches")
     public String beaches(Model model) {
         model.addAttribute("page", "beaches");
-        return "iteration2/beaches/list";
+        return "iteration3/beaches/list";
     }
 
     @RequestMapping("/beaches/{id}")
     public String beachDetails(@PathVariable Long id, Model model) {
+        Beach beach = beachRepository.findById(id).orElse(new Beach());
+        if (beach.getId() != null) {
+            model.addAttribute("beach", beach);
+            return "iteration3/beaches/details";
+        }
+        else
+            return "error";
+    }
+
+    @RequestMapping("/iteration2/beaches")
+    public String ite2Beaches(Model model) {
+        model.addAttribute("page", "beaches");
+        return "iteration2/beaches/list";
+    }
+
+    @RequestMapping("/iteration2/beaches/{id}")
+    public String ite2BeachDetails(@PathVariable Long id, Model model) {
         Beach beach = beachRepository.findById(id).orElse(new Beach());
         if (beach.getId() != null) {
             model.addAttribute("beach", beach);

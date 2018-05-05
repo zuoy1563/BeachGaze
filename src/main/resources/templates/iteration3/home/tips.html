@@ -1,0 +1,245 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--
+	Greatness by FreeHTML5.co
+	Twitter: http://twitter.com/fh5co
+	URL: http://FreeHTML5.co
+-->
+<html>
+<head th:include="fragments/head :: headerFragment">
+    <title id="pageTitle">Safety Tips - BeachGaze</title>
+    <!-- other elements you want to reference in your layout -->
+</head>
+<body>
+
+<div class="gtco-loader"></div>
+
+<div id="page">
+    <nav class="gtco-nav" role="navigation">
+        <div th:include="fragments/navbar"></div>
+    </nav>
+    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner">
+        <div class="overlay"></div>
+        <div class="gtco-container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <div class="display-t">
+                        <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                            <h1>Safety Tips</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- todo: contents -->
+    <div class="gtco-section">
+    <div class="container">
+        <h2>Historical Accidents Around Beaches</h2>
+        <h3>Shark Attack Cases</h3>
+        <p>Some parents may concern about shark attacks around beaches. Reports show that there are approximately
+            23 people died from shark attacks each year in Australia, but only about 2 cases are in Victoria, which
+            means Victorian beaches are relatively safe.</p>
+        <p>The following graph shows the trend of shark attacks in both Australia and Victoria from 2010 to
+            2018.</p>
+        <div id="atks" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+
+        <hr/>
+        <br/>
+        <h2>Tips to Beach Dangers</h2>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+                <li data-target="#myCarousel" data-slide-to="5"></li>
+                <li data-target="#myCarousel" data-slide-to="6"></li>
+                <li data-target="#myCarousel" data-slide-to="7"></li>
+                <li data-target="#myCarousel" data-slide-to="8"></li>
+                <li data-target="#myCarousel" data-slide-to="9"></li>
+                <li data-target="#myCarousel" data-slide-to="10"></li>
+                <li data-target="#myCarousel" data-slide-to="11"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="images/dangers/rip.jpg" alt="rip" style="width:100%; height: 700px">
+                    <div class="carousel-caption">
+                        <h3 style="color: white" >Rip Currents</h3>
+                        <p>Rip currents are powerful, channeled currents of water that can pull a swimmer out to sea. They are
+                            difficult to spot but some signs include smooth water located between breaking waves, anything floating
+                            out to sea or sandy, foamy water floating out beyond the waves. The best way to avoid a rip is to swim
+                            at a patrolled beach between the red and yellow flags. <br/>
+                            if caught by a rip current, do not attempt to fight it. Instead, try to swim parallel to the shore and
+                            then on an angle when the effects of the rips lessen.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="images/dangers/Shore-break.jpg" alt="Shore-break" style="width:100%; height: 700px">
+                    <div class="carousel-caption">
+                        <h3 style="color: white">Shore-break</h3>
+                        <p>A shore-break is when waves break directly on the shore. These are considerably dangerous as
+                            they can pull unsuspecting swimmers off their feet and into deeper water or into the
+                            sand on the ocean floor. Even small shore-breaks can be quite dangerous. If thrown by one, keep your hands in
+                            front of you at all times to protect your head and neck.<br/>
+                            Remember to always swim between the flags and ask a lifeguard if unsure of the wave conditions.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="images/dangers/jellyfish1.jpg" alt="Jellyfish" style="width:100%; height: 700px">
+                    <div class="carousel-caption">
+                        <h3 style="color: white">Jellyfish</h3>
+                        <p>Australia is home to various species of jellyfish. Luckily for Victorian beachgoers, the majority of more
+                            dangerous jellyfish prefer the warmer waters of northern Australia. However, there are still some
+                            jellyfish that are common in Melbourne beach waters. The bluebottle jellyfish is perhaps the most well
+                            known and most common jellyfish found in Melbourne waters. This jellyfish is poisonous but not typically
+                            deadly. Another common type is the lion’s mane jellyfish which is also poisonous but not deadly.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="images/dangers/jellyfish2.jpg" alt="Jellyfish" style="width:100%; height: 700px">
+                    <div class="carousel-caption">
+                        <h3 style="color: white" >What to do if stung by non-tropical jellyfish:</h3>
+                        <ul>
+                            <li>Wash off any remaining tentacles with seawater or pick them off with fingers (gloves are
+                                recommended).
+                            </li>
+                            <li>Immerse the affected area in hot water (no hotter than can be tolerated) for at least 20 minutes.
+                            </li>
+                            <li>If unable to access hot water, apply an ice pack or cold water to the affected area.</li>
+                            <li>Seek further medical attention if condition worsens.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="images/dangers/jellyfish3.jpg" alt="Jellyfish" style="width:100%; height: 700px">
+                    <div class="carousel-caption">
+                        <h3 style="color: white">What to do if stung by a tropical jellyfish:</h3>
+                        <ul style="padding-bottom: 0">
+                            <li>Call Triple Zero (000) for an ambulance.</li>
+                            <li>Pour vinegar liberally over the infected area for at least 30 seconds.</li>
+                            <li>If vinegar unavailable, use seawater. Do not use fresh water.</li>
+                            <li>Provide emergency care such as CPR if required.</li>
+                            <li>Seek medical aid.</li>
+                        </ul>
+                        <p><b>Note</b>: another poisonous creature is the blue ringed octopus. If bitten, immediately call Triple Zero (000)
+                            and proceed with CPR if necessary. Also apply compression or bandaging to the affected area.</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="images/dangers/shark.jpg" alt="Shark" style="width:100%; height: 700px">
+                    <div class="carousel-caption">
+                        <h3 style="color: white">Sharks</h3>
+                        <p>There are various types of sharks around Australia, however, most are harmless to humans. Still, it is
+                            best to maintain interaction with sharks to a minimum as shark attacks can prove to be fatal.</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="images/dangers/shark2.jpg" alt="Shark" style="width:100%; height: 700px">
+                    <div class="carousel-caption">
+                        <h3 style="color: white">Avoiding sharks:</h3>
+                        <ul>
+                            <li>Avoid swimming at dawn and dusk.</li>
+                            <li>Avoid swimming at river mouths or in murky water.</li>
+                            <li>Avoid swimming in or around schools of baitfish.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="images/dangers/shark3.jpg" alt="Shark" style="width:100%; height: 700px">
+                    <div class="carousel-caption">
+                        <h3 style="color: white">Encountering a shark:</h3>
+                        <ul>
+                            <li>Do not take your eyes off the shark.</li>
+                            <li>Do not make any sudden movements.</li>
+                            <li>Try to get into a defensive position.</li>
+                            <li>If the shark attacks, attempt to hit the shark in the face and gills.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="images/dangers/sunburn2.jpg" alt="Sunburn" style="width:100%; height: 700px">
+                    <div class="carousel-caption">
+                        <h3 style="color: white">Sunburn</h3>
+                        <p>Sunburn is a significant danger when going to the beach. Prior to going to the beach, check the forecasted
+                            weather and UV Index. Also remember to always apply adequate sunscreen to all exposed areas.</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="images/dangers/sunburn1.jpg" alt="Sunburn" style="width:100%; height: 700px">
+                    <div class="carousel-caption">
+                        <h3 style="color: white">Treatment for sunburn:</h3>
+                        <ul>
+                            <li>Gently apply a cool compress or bathe the area in cool water.</li>
+                            <li>Apply moisturizer if not too painful (not a butter-based moisturizer).</li>
+                            <li>Avoid using soap.</li>
+                            <li>Don’t pop the blisters.</li>
+                            <li>Consider asking a pharmacist for products to soothe sunburn. Try to avoid products that require rubbing.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="images/dangers/water-quality.jpg" alt="Water Quality" style="width:100%; height: 700px">
+                    <div class="carousel-caption">
+                        <h3 style="color: white">Water Quality</h3>
+                        <p>Water quality can be affected by a large variety of factors including bacteria, untreated sewage, pollution and
+                            stormwater. Swimming in poor quality water can cause illnesses.<br/>
+                            The water quality is assessed weekly by the local council and steps will be taken to close a beach if the water
+                            quality is deemed too poor. However, beach goers are advised to should still check the water quality before
+                            going to the beach, especially if planning to go after a day of heavy rainfall.</p>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="images/dangers/Harmful-Algal-Blooms.jpg" alt="Harmful Algal Blooms" style="width:100%; height: 700px">
+                    <div class="carousel-caption">
+                        <h3 style="color: white">Harmful Algal Blooms</h3>
+                        <p>Harmful algal blooms are dense populations or blooms of algae that form in coastal waters. They can be toxic if
+                            swimming in contaminated water or eating infected marine life.<br/>
+                            Though they are a danger, often a beach will be closed if there is a risk of harmful algal blooms affecting
+                            swimmers.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="javascript:void(0);" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="javascript:void(0);" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    </div>
+    <div th:replace="fragments/footer :: footer">...</div>
+</div>
+<div th:include="fragments/jsFooter"></div>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script th:src="@{/js/sharkAtkJs.js}"></script>
+<div class="gototop js-top">
+    <a href="#" class="js-gotop">
+        <span class="icon">
+            <i class="icon-arrow-up" style="color: white"></i>
+        </span>
+    </a>
+</div>
+</body>
+</html>

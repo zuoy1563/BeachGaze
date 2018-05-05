@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--
+	Greatness by FreeHTML5.co
+	Twitter: http://twitter.com/fh5co
+	URL: http://FreeHTML5.co
+-->
+<html>
+<head th:include="fragments/head :: headerFragment">
+    <title id="pageTitle">Statistics - BeachGaze</title>
+    <!-- other elements you want to reference in your layout -->
+</head>
+<body>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="js/charts.js"></script>
+<div class="gtco-loader"></div>
+
+<div id="page">
+    <nav class="gtco-nav" role="navigation">
+        <div th:include="fragments/navbar"></div>
+    </nav>
+    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner"
+            style="background-image:url(images/homeImages/img_bg_1.jpg);">
+        <div class="overlay"></div>
+        <div class="gtco-container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <div class="display-t">
+                        <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                            <h1>Statistics</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="gtco-section">
+        <div class="gtco-container">
+            <h2>Water Quality</h2>
+            <p>Sea water quality is an important indicator for you to decide if the beach is suitable for you to
+                take your children to swim or not. The virtualised water quality by location is shown in the following
+                graph. If a point has value of 0, it does not mean that there is no bacteria in the sea water, but
+                there is only few bacteria so that it cannot be observed clearly.</p>
+            <p>It is obvious that at most of time, the quality of sea water is good. However, there are some extremely
+                big numbers shown in the historical data as well at some beaches. So it is significant to check the
+                current water quality before your journey.</p>
+            <form class="form-inline" action="#">
+                <div class="col-md-3"></div>
+                <div class="form-group col-md-5">
+                    <label for="place">Select Place: </label>
+                    <select id="place" name="place" class="form-control" style="width: 300px; height: 40px">
+                        <option value="altona">Altona</option>
+                        <option value="brighton">Brighton</option>
+                        <option value="elwood">Elwood</option>
+                        <option value="port_mel">Port Melbourne</option>
+                        <option value="sandridge">Sandridge</option>
+                        <option value="south_mel">South Melbourne</option>
+                        <option value="st_kilda">St Kilda</option>
+                        <option value="Williamstown">Williamstown</option>
+                    </select>
+                </div>
+                <a href="javascript:void(0);" class="btn btn-primary" onclick="plot()">Show</a>
+            </form>
+            <div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+        </div>
+    </div>
+    <div class="gtco-section">
+        <div class="gtco-container">
+            <h2>Shark Attack Cases</h2>
+            <p>Some parents may concern about shark attacks around beaches. Reports show that there are approximately
+                23 people died from shark attacks each year in Australia, but only about 2 cases are in Victoria, which
+                means Victorian beaches are relatively safe.</p>
+            <p>The following graph shows the trend of shark attacks in both Australia and Victoria from 2010 to
+                2018.</p>
+            <div id="atks" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+        </div>
+        <script type="text/javascript">
+            plot();
+            $.ajax({
+                url: 'data/sharkatks.csv',
+                success: function (csv) {
+                    Highcharts.chart('atks', {
+                        data: {
+                            csv: csv.replace(/\n\n/g, '\n')
+                        },
+                        yAxis: {
+                            title: {
+                                text: 'Number of Shark Attacks'
+                            }
+                        },
+                        plotOptions: {
+                            series: {
+                                marker: {
+                                    enabled: false
+                                }
+                            }
+                        },
+                        title: {
+                            text: 'Number of Shark Attacks Over Time'
+                        },
+                        subtitle: {
+                            text: 'Australia VS Victoria'
+                        }
+                    });
+                }
+            })
+        </script>
+    </div>
+    <div th:replace="fragments/footer :: footer">...</div>
+</div>
+
+
+<div class="gototop js-top">
+    <a href="#" class="js-gotop">
+        <span class="icon">
+            <i class="icon-arrow-up" style="color: white"></i>
+        </span>
+    </a>
+</div>
+<div th:include="fragments/jsFooter"></div>
+<script th:src="@{/js/charts.js}"></script>
+
+</body>
+</html>
