@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--
+	Greatness by FreeHTML5.co
+	Twitter: http://twitter.com/fh5co
+	URL: http://FreeHTML5.co
+-->
+<html>
+<head th:include="fragments/head :: headerFragment">
+    <title id="pageTitle">Historic Accidents - BeachGaze</title>
+    <!-- other elements you want to reference in your layout -->
+</head>
+<body>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<div class="gtco-loader"></div>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+<div id="page">
+    <nav class="gtco-nav" role="navigation">
+        <div th:include="fragments/navbar"></div>
+    </nav>
+    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-size: 100% 50%">
+        <div class="overlay"></div>
+        <div class="gtco-container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <div class="display-t">
+                        <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                            <h1>Historic accidents</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="gtco-section" style="padding-bottom: 0">
+        <div class="gtco-container">
+            <h1>UV Basics</h1>
+            <blockquote class="blockquote">
+                <p class="mb-0">Ultraviolet (UV) radiation is part of the electromagnetic spectrum emitted by the sun.
+                    Whereas UVC rays (wavelengths of 100-280 nm) are absorbed by the atmospheric ozone, most radiation
+                    in the UVA range (315-400 nm) and about 10 % of the UVB rays (280-315 nm) reach the Earth’s surface.
+                    Both UVA and UVB are of major importance to human health.
+                    <br/>
+                    Small amounts of UV are essential for the production of vitamin D in people, yet overexposure may
+                    result in acute and chronic health effects on the skin, eye and immune system.</p>
+                <footer class="blockquote-footer">From<cite title="Source Title">World Health Organisation</cite></footer>
+            </blockquote>
+            <b>Note</b>: UV radiation also exists even if it is cloudy or even rainy. In addition, UV rays could cause sunburn,
+            and sunburn could cause 95% of a fatal skin cancer called Melanoma. So, do check the current UV and protect
+            yourself properly. Click <a href="/statistics">here</a> to read more about statistics on Melanoma.
+
+            <ul>The UV index scale consists of five levels according to United States Environmental Protection Agency:
+                <li><span style="color: #5cb85c">0-2 (Low)</span>: low danger from sun's UV rays for the average person.</li>
+                <li><span style="color: #cac70b">3-5 (Moderate)</span>: moderate risk of harm from unprotected sun exposure.</li>
+                <li><span style="color: #f88c3a">6-7 (High)</span>: high risk of harm from unprotected sun exposure. Protection against skin and eye damage is needed.</li>
+                <li><span style="color: #d9534f">8-10 (Very High)</span>: very high risk of harm from unprotected sun exposure. Take extra precautions because unprotected skin and eyes will be damaged and can burn quickly.</li>
+                <li><span style="color: #8b5097">11 or more (Extreme)</span>:  extreme risk of harm from unprotected sun exposure. Take all precautions because unprotected skin and eyes can burn in minutes. </li>
+            </ul>
+            <p>Generally speaking, it is not recommended to go outside once the UV is marked as High or more. If you really
+            would like to visit beaches at that time, please do apply sunscreens and minimise your time in the sun between 10
+            a.m and 4 p.m.</p>
+
+            <!--Tips-->
+            <h1>Some Tips to Help Protect You and Your Children</h1>
+            <h2>Wear Sun-protective Clothing if Possible</h2>
+            <p>All clothes are sun-protective to some degree. However, they are divided into several levels. For the
+            normal short-sleeved shirts or short pants, obviously it can only provide limited protection to your skin,
+            while long-sleeved shirts and long pants can help protect your skin much better. Of course, it would be the best
+            if you could wear some clothes that are applied with new technology to absorb the UV rays.</p>
+
+            <h2>Wear Hats and Sunglasses if Possible</h2>
+            <p>It would also be a good choice if you could wear hats with broad brims, which could significantly help protect
+            your eyes and face. Sunglasses could also help protect your eyes. Remember, eyes are every vulnerable to UV
+                rays, so do treat your eyes with care.</p>
+
+            <h2>Apply Sunscreen</h2>
+            <p>Sunscreen is a must to protect your skin from UV rays. It is important to understand some concepts before you
+            choose your sunscreen. In short, sunscreen labelled with SPF 15 means that it could filter approximately 93% of
+            UV rays while SPF 30 means that it could filter approximately 97% of UV rays. SPF 50 sunscreen could filter 98%
+            of UV rays. In most of the cases, SPF 30 sunscreen is the best choice for daily use.
+            <br/>
+            Sunscreen should be applied 20 minutes before exposure to UV rays because it needs some time to take effect.
+            The recommended application is 5ml for each arm, leg, body and face. Sunscreen should be re-applied every 2 hours and
+                immediately after swimming.
+            <br/>
+            There are some special considerations should be taken for your children. First, it would be best if you could
+                buy sunscreen that are designed for children to use. Besides, please limit the time that your children could
+                be exposed to UV rays since their skin are easier to get burnt.
+                <b>Note</b>: Sunscreen could irritate your skin, make sure that you try before using.
+            </p>
+
+            <h1>Additional Resources</h1>
+            <a href="https://www.epa.gov/sunsafety/uv-index-scale-1" target="_blank">UV Index Scale Details from EPA</a> <br/>
+            <a href="https://www.skincancer.org/prevention/sun-protection/sunscreen/sunscreens-explained" target="_blank">Sunscreen Explained</a> <br/>
+            <a href="https://theconversation.com/explainer-how-does-sunscreen-work-what-is-spf-and-can-i-still-tan-with-it-on-88869" target="_blank">
+                Explainer: how does sunscreen work, what is SPF and can I still tan with it on?
+            </a>
+        </div>
+    </div>
+    <!--Learn more section-->
+    <div class="gtco-section">
+        <div class="container">
+            <h1>Read More</h1>
+            <div class="readMoreBox">
+                <a href="/statistics">
+                    <div class="card">
+                        <div class="font-icon" style="text-align: center">
+                            <i class="fas fa-chart-line" style="font-size: 9em;color: #3e93cf"></i>
+                        </div>
+                        <div style="padding: 2px 16px; background-color: #3e93cf; text-align: center">
+                            <b style="color: white">Statistics</b>
+                            <p style="color: white">Click to learn statistics on common beach dangers.</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="/first_aid">
+                    <div class="card">
+                        <div class="font-icon" style="text-align: center">
+                            <i class="fas fa-first-aid" style="font-size: 9em;color: #3e93cf"></i>
+                        </div>
+                        <div style="padding: 2px 16px; background-color: #3e93cf; text-align: center">
+                            <b style="color: white">First-aid Guide</b>
+                            <p style="color: white">Click to learn useful first-aid skills for protecting your children.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div th:replace="fragments/footer :: footer">...</div>
+</div>
+
+
+<div class="gototop js-top">
+    <a href="#" class="js-gotop">
+        <span class="icon">
+            <i class="icon-arrow-up" style="color: white"></i>
+        </span>
+    </a>
+</div>
+<div th:include="fragments/jsFooter"></div>
+
+</body>
+</html>

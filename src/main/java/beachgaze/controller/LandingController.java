@@ -13,8 +13,8 @@ public class LandingController {
     @Autowired
     BeachRepository beachRepository;
 
-    @RequestMapping("/")
-    public String landing(Model model) {
+    @RequestMapping("/iteration2/")
+    public String ite2Landing(Model model) {
         model.addAttribute("page", "index");
         return "home/index";
     }
@@ -32,10 +32,34 @@ public class LandingController {
     }
 
 
+    @RequestMapping("/")
+    public String landing(Model model) {
+        model.addAttribute("page", "index");
+        return "iteration3/home/index";
+    }
+
+    @RequestMapping("/statistics")
+    public String statistics(Model model) {
+        model.addAttribute("page", "statistics");
+        return "iteration3/home/statistics";
+    }
+
     @RequestMapping("/beaches")
     public String beaches(Model model) {
         model.addAttribute("page", "beaches");
         return "iteration3/beaches/list";
+    }
+
+    @RequestMapping("/accidents")
+    public String accidents(Model model) {
+        model.addAttribute("page", "accidents");
+        return "iteration3/home/accidents";
+    }
+
+    @RequestMapping("/uv_instructions")
+    public String uvInstructions(Model model) {
+        model.addAttribute("page", "UV Instructions");
+        return "iteration3/home/uv_instructions";
     }
 
     @RequestMapping("/beaches/{id}")

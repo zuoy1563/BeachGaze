@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--
+	Greatness by FreeHTML5.co
+	Twitter: http://twitter.com/fh5co
+	URL: http://FreeHTML5.co
+-->
+<html>
+<head th:include="fragments/head :: headerFragment">
+    <title id="pageTitle">Historic Accidents - BeachGaze</title>
+    <!-- other elements you want to reference in your layout -->
+</head>
+<body>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<div class="gtco-loader"></div>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+<div id="page">
+    <nav class="gtco-nav" role="navigation">
+        <div th:include="fragments/navbar"></div>
+    </nav>
+    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-size: 100% 50%">
+        <div class="overlay"></div>
+        <div class="gtco-container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <div class="display-t">
+                        <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                            <h1>Historic accidents</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="gtco-section">
+        <div class="gtco-container">
+            <div class="container-fluid">
+                <div class="col-md-12">
+                    <div class="row">
+                        <h2>Historic Accidents Around Beaches</h2>
+                        <p>Although it sounds scary that there are many accidents throughout the year, by reading the
+                        following cases, it could understood that more often than not, accidents are actually caused by
+                        human errors. The accident rates can significantly drop if more attentions can be paid.</p>
+                        <div class="timeline timeline-single-column">
+                            <!-- Time label 1 -->
+                            <span class="timeline-label">
+                                <span class="label label-info">25 Mar 2018</span>
+                            </span>
+                            <div class="timeline-item timeline-item-arrow-sm">
+                                <div class="timeline-point timeline-point-warning">
+                                </div>
+                                <div class="timeline-event timeline-event-primary">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">Two people died around Sunshine Coast due to an accident</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            The bodies of two people were washed up and found on 25 Mar 2018 with their abandoned jet ski.
+                                            The police said it is pretty common for people to park their jet skis around and go to swim
+                                            in the surf there.
+                                            <br/>
+                                            <a class="timeline-link" href="http://www.abc.net.au/news/2018-03-26/two-people-found-dead-bribie-island-beach-an-accident-police-say/9586008" target="_blank">
+                                                Details
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Time label 2 -->
+                            <span class="timeline-label">
+                                <span class="label label-info">6 Jan 2018</span>
+                            </span>
+
+                            <div class="timeline-item timeline-item-arrow-sm">
+                                <div class="timeline-point timeline-point-warning">
+                                </div>
+                                <div class="timeline-event timeline-event-primary">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">Two men drowned at Melbourne beaches</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            Two men drowned at Altona beach and Williamstown beach respectively.
+                                            <br/>
+                                            <a class="timeline-link" href="http://www.abc.net.au/news/2018-01-06/two-drown-in-melbourne-toddler-critical/9308590" target="_blank">
+                                                Details
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Time label 3 -->
+                            <span class="timeline-label">
+                                <span class="label label-info">18 Dec 2017</span>
+                            </span>
+
+                            <div class="timeline-item timeline-item-arrow-sm">
+                                <div class="timeline-point timeline-point-warning">
+                                </div>
+                                <div class="timeline-event timeline-event-primary">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">A 15-year-old teenager died at Glenelg beach</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            A 15-year-old teenager drowned at Glenelg beach although received CPR. His mother
+                                            visited the beach with him together, but had not kept her child in eyesight for
+                                            several hours.
+                                            <br/>
+                                            <a class="timeline-link" href="http://www.abc.net.au/news/2017-12-18/glenelg-beach-drowning/9269954" target="_blank">
+                                                Details
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Time label 4 -->
+                            <span class="timeline-label">
+                                <span class="label label-info">11 Dec 2017</span>
+                            </span>
+                            <div class="timeline-item timeline-item-arrow-sm">
+                                <div class="timeline-point timeline-point-warning">
+                                </div>
+                                <div class="timeline-event timeline-event-primary">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">An Indian girl drowned at Glenelg beach</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            The body of a 15-year-old Indian was found while other four girls are rescued by the
+                                            local surf lifesavers. It is understood that they were there for attending the Pacific
+                                            School games.
+                                            <br/>
+                                            <a class="timeline-link" href="http://www.abc.net.au/news/2017-12-11/teens-body-found-at-adelaides-glenelg-beach/9245202" target="_blank">
+                                                Details
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Time label 5 -->
+                            <span class="timeline-label">
+                                <span class="label label-info">2 March 2017</span>
+                            </span>
+                            <div class="timeline-item timeline-item-arrow-sm">
+                                <div class="timeline-point timeline-point-warning">
+                                </div>
+                                <div class="timeline-event timeline-event-primary">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">A man died after he was in trouble with his sons in the water</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            A man died at a beach in NSW. At the time, he was swimming with his two sons,
+                                            who are aged 11 and 14. Suddenly, they all got into trouble in the water. The two
+                                            boys were rescued successfully, while the man was pulled out from the water unresponsively
+                                            and died at the scene.
+                                            <br/>
+                                            <a class="timeline-link" href="https://www.sbs.com.au/news/man-drowns-two-sons-survive-at-nsw-beach" target="_blank">
+                                                Details
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Learn more section-->
+    <div class="gtco-section">
+        <div class="container">
+            <h1>Read More</h1>
+            <div class="readMoreBox">
+                <a href="/statistics">
+                <div class="card">
+                    <div class="font-icon" style="text-align: center">
+                    <i class="fas fa-chart-line" style="font-size: 9em;color: #3e93cf"></i>
+                    </div>
+                    <div style="padding: 2px 16px; background-color: #3e93cf; text-align: center">
+                        <b style="color: white">Statistics</b>
+                        <p style="color: white">Click to learn statistics on common beach dangers.</p>
+                    </div>
+                </div>
+                </a>
+                <a href="/first_aid">
+                <div class="card">
+                    <div class="font-icon" style="text-align: center">
+                        <i class="fas fa-first-aid" style="font-size: 9em;color: #3e93cf"></i>
+                    </div>
+                    <div style="padding: 2px 16px; background-color: #3e93cf; text-align: center">
+                        <b style="color: white">First-aid Guide</b>
+                        <p style="color: white">Click to learn useful first-aid skills for protecting your children.</p>
+                    </div>
+                </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div th:replace="fragments/footer :: footer">...</div>
+</div>
+
+
+<div class="gototop js-top">
+    <a href="#" class="js-gotop">
+        <span class="icon">
+            <i class="icon-arrow-up" style="color: white"></i>
+        </span>
+    </a>
+</div>
+<div th:include="fragments/jsFooter"></div>
+
+</body>
+</html>

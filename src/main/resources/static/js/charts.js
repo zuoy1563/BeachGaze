@@ -30,7 +30,7 @@ $(document).ready(function () {
                         color:'red',
                         dashStyle:'solid',
                         value:400,
-                        width:2,
+                        width:2
                     }]
                 },
                 xAxis: {
@@ -57,6 +57,41 @@ $(document).ready(function () {
                     data: filteredData
                 }]
             });
+    });
+
+    // show UV index and instructions
+    var uv_api_url = 'http://api.openweathermap.org/data/2.5/uvi?appid=735607688818c4b88d0e04ec832208fc&';
+    var beach_info_url = '/api/v1/beaches/' + spanValue;
+    // get beach lat and lng
+    $.get(beach_info_url, function (beach) {
+        var beachLat = beach.latitude;
+        var beachLng = beach.longitude;
+        uv_api_url += 'lat=' + beachLat + '&lon=' + beachLng;
+        console.log(uv_api_url);
+
+        // get uv data
+        $.get(uv_api_url, function (uv) {
+            var isoDate = new Date(uv.date_iso);
+            var uv_date = isoDate.toLocaleDateString('en-GB');
+            var uv_value = uv.value;
+            var uv_level = '';
+
+            switch (true) {
+                case uv_value <= 2: uv_level = 'Low'; $("#uv-warning").addClass('alert-success'); break;
+                case uv_value <= 5: uv_level = 'Moderate'; $("#uv-warning").addClass('alert-warning'); break;
+                case uv_value <= 7: uv_level = 'High'; $("#uv-warning").addClass('alert-danger'); break;
+                case uv_value <= 10: uv_level = 'Very High'; $("#uv-warning").addClass('alert-danger'); break;
+                case uv_value > 10: uv_level = 'Extreme'; $("#uv-warning").addClass('alert-danger'); break;
+            }
+
+
+            var alert_content = '<p>The UV index for ' + beachName + ' at ' + uv_date + ' is ' + uv_value + ' (' + uv_level +'). Please click' +
+                '<a href="/uv_instructions"> here</a> for detailed instructions for protecting yourself.</p>';
+            $("#uv-warning").append(alert_content);
+
+
+
+        });
     });
 
     // show weather widget

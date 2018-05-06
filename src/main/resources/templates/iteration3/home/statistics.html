@@ -23,8 +23,7 @@
     <nav class="gtco-nav" role="navigation">
         <div th:include="fragments/navbar"></div>
     </nav>
-    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner"
-            style="background-image:url(images/homeImages/img_bg_1.jpg);">
+    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-size: 100% 50%">
         <div class="overlay"></div>
         <div class="gtco-container">
             <div class="row">
@@ -40,75 +39,66 @@
     </header>
     <div class="gtco-section">
         <div class="gtco-container">
-            <h2>Water Quality</h2>
-            <p>Sea water quality is an important indicator for you to decide if the beach is suitable for you to
-                take your children to swim or not. The virtualised water quality by location is shown in the following
-                graph. If a point has value of 0, it does not mean that there is no bacteria in the sea water, but
-                there is only few bacteria so that it cannot be observed clearly.</p>
-            <p>It is obvious that at most of time, the quality of sea water is good. However, there are some extremely
-                big numbers shown in the historical data as well at some beaches. So it is significant to check the
-                current water quality before your journey.</p>
-            <form class="form-inline" action="#">
-                <div class="col-md-3"></div>
-                <div class="form-group col-md-5">
-                    <label for="place">Select Place: </label>
-                    <select id="place" name="place" class="form-control" style="width: 300px; height: 40px">
-                        <option value="altona">Altona</option>
-                        <option value="brighton">Brighton</option>
-                        <option value="elwood">Elwood</option>
-                        <option value="port_mel">Port Melbourne</option>
-                        <option value="sandridge">Sandridge</option>
-                        <option value="south_mel">South Melbourne</option>
-                        <option value="st_kilda">St Kilda</option>
-                        <option value="Williamstown">Williamstown</option>
-                    </select>
+            <div class="flex-wrapper row">
+                <div class="single-chart col-md-4">
+                    <svg viewbox="0 0 36 36" class="circular-chart orange">
+                        <path class="circle-bg"
+                              d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <path class="circle"
+                              stroke-dasharray="30, 100"
+                              d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <text x="18" y="20.35" class="percentage">30%</text>
+                    </svg>
+
                 </div>
-                <a href="javascript:void(0);" class="btn btn-primary" onclick="plot()">Show</a>
-            </form>
-            <div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+
+                <div class="single-chart col-md-4">
+                    <svg viewbox="0 0 36 36" class="circular-chart green">
+                        <path class="circle-bg"
+                              d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <path class="circle"
+                              stroke-dasharray="60, 100"
+                              d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <text x="18" y="20.35" class="percentage">60%</text>
+                    </svg>
+                </div>
+
+                <div class="single-chart col-md-4">
+                    <svg viewbox="0 0 36 36" class="circular-chart blue">
+                        <path class="circle-bg"
+                              d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <path class="circle"
+                              stroke-dasharray="90, 100"
+                              d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <text x="18" y="20.35" class="percentage">90%</text>
+                    </svg>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4" style="text-align: center">Add description here</div>
+                <div class="col-md-4" style="text-align: center">Add description here</div>
+                <div class="col-md-4" style="text-align: center">Add description here</div>
+
+            </div>
         </div>
-    </div>
-    <div class="gtco-section">
-        <div class="gtco-container">
-            <h2>Shark Attack Cases</h2>
-            <p>Some parents may concern about shark attacks around beaches. Reports show that there are approximately
-                23 people died from shark attacks each year in Australia, but only about 2 cases are in Victoria, which
-                means Victorian beaches are relatively safe.</p>
-            <p>The following graph shows the trend of shark attacks in both Australia and Victoria from 2010 to
-                2018.</p>
-            <div id="atks" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
-        </div>
-        <script type="text/javascript">
-            plot();
-            $.ajax({
-                url: 'data/sharkatks.csv',
-                success: function (csv) {
-                    Highcharts.chart('atks', {
-                        data: {
-                            csv: csv.replace(/\n\n/g, '\n')
-                        },
-                        yAxis: {
-                            title: {
-                                text: 'Number of Shark Attacks'
-                            }
-                        },
-                        plotOptions: {
-                            series: {
-                                marker: {
-                                    enabled: false
-                                }
-                            }
-                        },
-                        title: {
-                            text: 'Number of Shark Attacks Over Time'
-                        },
-                        subtitle: {
-                            text: 'Australia VS Victoria'
-                        }
-                    });
-                }
-            })
-        </script>
     </div>
     <div th:replace="fragments/footer :: footer">...</div>
 </div>

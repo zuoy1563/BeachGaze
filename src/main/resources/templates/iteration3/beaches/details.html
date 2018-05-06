@@ -18,7 +18,7 @@
     <nav class="gtco-nav" role="navigation">
         <div th:include="fragments/navbar"></div>
     </nav>
-    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner">
+    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-size: 100% 50%">
         <div class="overlay"></div>
         <div class="gtco-container">
             <div class="row">
@@ -36,11 +36,22 @@
     <div class="gtco-section" id="section2">
         <div class="container">
             <a href="/beaches">Back to List</a><br/>
+
+            <!--UV alert box-->
+            <div class="alert alert-dismissible" id="uv-warning">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            </div>
+
+            <!--Title and rating-->
             <h1 id="beachName" th:text="${beach.name}" style="display: inline">...</h1> &nbsp;&nbsp;
             <div class="tooltip" style="font-weight: bold">Rating:
                 <span class="tooltiptext">According to surrounded infrastructure and water quality. A higher rating is better.</span>
             </div>
-            <b th:text="${beach.rating} + '/5'"></b>
+            <b th:text="${beach.rating} + '/5'"></b><br/>
+
+
+
+            <!--body-->
             <div class="row">
                 <div class="col-md-8">
                     <p th:utext="${beach.longDescription}">...</p>
@@ -65,11 +76,11 @@
                     </div>
 
                     <!-- Left and right controls -->
-                    <a class="left carousel-control" href="javascript:void(0);" data-slide="prev">
+                    <a class="left carousel-control" href="javascript:void(0)" data-slide="prev">
                         <span class="glyphicon glyphicon-chevron-left"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="right carousel-control" href="javascript:void(0);" data-slide="next">
+                    <a class="right carousel-control" href="javascript:void(0)" data-slide="next">
                         <span class="glyphicon glyphicon-chevron-right"></span>
                         <span class="sr-only">Next</span>
                     </a>
