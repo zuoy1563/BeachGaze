@@ -16,14 +16,13 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/series-label.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="js/charts.js"></script>
 <div class="gtco-loader"></div>
 
 <div id="page">
     <nav class="gtco-nav" role="navigation">
         <div th:include="fragments/navbar"></div>
     </nav>
-    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-size: 100% 50%">
+    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-size: 100% 40vh">
         <div class="overlay"></div>
         <div class="gtco-container">
             <div class="row">
@@ -39,42 +38,24 @@
     </header>
     <div class="gtco-section">
         <div class="gtco-container">
+            <h1>Drowning</h1>
+            By examining the following graphs, it is understood that there are not a lot of drowning cases in Victoria,
+            and most of them are non-fatal.<br/>
+            However, it should be noted that the number as well as the percentage of fatal incidents that happened
+            around natural water are much higher than the incidents that happened at other locations. As a result, it is
+            important for you to take good care of your children while at beaches.
+            <!--Overall Drown Bar Chart-->
+            <div id="drownBar1" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+            <!--Drown Bar Chart by Location-->
+            <div id="drownBar2" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+
+            <hr/>
+            <br/>
+            <h1>Melanoma</h1>
+            <!--Circular Charts-->
+            Melanoma is the most fatal skin cancer and the main cause of it is sunburn, which means that you should pay
+            more attention to protect yourself and your children from sunburn. <br/>
             <div class="flex-wrapper row">
-                <div class="single-chart col-md-4">
-                    <svg viewbox="0 0 36 36" class="circular-chart orange">
-                        <path class="circle-bg"
-                              d="M18 2.0845
-          a 15.9155 15.9155 0 0 1 0 31.831
-          a 15.9155 15.9155 0 0 1 0 -31.831"
-                        />
-                        <path class="circle"
-                              stroke-dasharray="30, 100"
-                              d="M18 2.0845
-          a 15.9155 15.9155 0 0 1 0 31.831
-          a 15.9155 15.9155 0 0 1 0 -31.831"
-                        />
-                        <text x="18" y="20.35" class="percentage">30%</text>
-                    </svg>
-
-                </div>
-
-                <div class="single-chart col-md-4">
-                    <svg viewbox="0 0 36 36" class="circular-chart green">
-                        <path class="circle-bg"
-                              d="M18 2.0845
-          a 15.9155 15.9155 0 0 1 0 31.831
-          a 15.9155 15.9155 0 0 1 0 -31.831"
-                        />
-                        <path class="circle"
-                              stroke-dasharray="60, 100"
-                              d="M18 2.0845
-          a 15.9155 15.9155 0 0 1 0 31.831
-          a 15.9155 15.9155 0 0 1 0 -31.831"
-                        />
-                        <text x="18" y="20.35" class="percentage">60%</text>
-                    </svg>
-                </div>
-
                 <div class="single-chart col-md-4">
                     <svg viewbox="0 0 36 36" class="circular-chart blue">
                         <path class="circle-bg"
@@ -83,22 +64,86 @@
           a 15.9155 15.9155 0 0 1 0 -31.831"
                         />
                         <path class="circle"
-                              stroke-dasharray="90, 100"
+                              stroke-dasharray="12.5, 100"
                               d="M18 2.0845
           a 15.9155 15.9155 0 0 1 0 31.831
           a 15.9155 15.9155 0 0 1 0 -31.831"
                         />
-                        <text x="18" y="20.35" class="percentage">90%</text>
+                        <text x="18" y="20.35" class="percentage">12.5%</text>
                     </svg>
+                </div>
+
+                <div class="single-chart col-md-4">
+                    <svg viewbox="0 0 36 36" class="circular-chart orange">
+                        <path class="circle-bg"
+                              d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <path class="circle"
+                              stroke-dasharray="20, 100"
+                              d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <text x="18" y="20.35" class="percentage">20%</text>
+                    </svg>
+                </div>
+
+                <div class="single-chart col-md-4">
+                    <svg viewbox="0 0 36 36" class="circular-chart red">
+                        <path class="circle-bg"
+                              d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <path class="circle"
+                              stroke-dasharray="95, 100"
+                              d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <text x="18" y="20.35" class="percentage">95%</text>
+                    </svg>
+
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4" style="text-align: center">Add description here</div>
-                <div class="col-md-4" style="text-align: center">Add description here</div>
-                <div class="col-md-4" style="text-align: center">Add description here</div>
+                <div class="col-md-4" style="text-align: center">1 out of 8 adults are sunburnt on average summer weekend.</div>
+                <div class="col-md-4" style="text-align: center">1 out of 5 teenagers are sunburnt on average summer weekend.</div>
+                <div class="col-md-4" style="text-align: center">Sunburn causes 95% of melanomas, the most fatal skin cancer.</div>
 
             </div>
+
+            <br/>
+            <!--Skin Cancer by States Bar Chart-->
+            It can be understood from the following graph that Victoria holds the third largest number of people who suffer
+            from Melanoma. So it is important for you to read
+            <a href="/uv_instructions">UV Instructions</a> before visiting beaches with your children. <br/>
+            <b>Note</b>: The data for the number of Melanoma incidents in New South Wales in 2014 is missing.
+            <br/>
+            <div class="form-inline">
+                <div class="col-md-2"></div>
+                <div class="form-group form-group-lg col-md-3">
+                    <label for="year">Year: </label>
+                    <select id="year" name="year" class="form-control">
+                        <option value="1">All</option>
+                        <option value="2010">2010</option>
+                        <option value="2011">2011</option>
+                        <option value="2012">2012</option>
+                        <option value="2013">2013</option>
+                        <option value="2014">2014</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="cancerBar" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+
         </div>
+    </div>
+    <!--Learn more section-->
+    <div class="gtco-section" style="padding-top: 0">
+        <div th:include="fragments/readmore"></div>
     </div>
     <div th:replace="fragments/footer :: footer">...</div>
 </div>
@@ -112,7 +157,7 @@
     </a>
 </div>
 <div th:include="fragments/jsFooter"></div>
-<script th:src="@{/js/charts.js}"></script>
+<script th:src="@{/js/statistics.js}"></script>
 
 </body>
 </html>

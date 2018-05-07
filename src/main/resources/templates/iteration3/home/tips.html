@@ -18,7 +18,7 @@
     <nav class="gtco-nav" role="navigation">
         <div th:include="fragments/navbar"></div>
     </nav>
-    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-size: 100% 50%">
+    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-size: 100% 40vh">
         <div class="overlay"></div>
         <div class="gtco-container">
             <div class="row">
@@ -35,17 +35,6 @@
     <!-- todo: contents -->
     <div class="gtco-section">
     <div class="container">
-        <h2>Historical Accidents Around Beaches</h2>
-        <h3>Shark Attack Cases</h3>
-        <p>Some parents may concern about shark attacks around beaches. Reports show that there are approximately
-            23 people died from shark attacks each year in Australia, but only about 2 cases are in Victoria, which
-            means Victorian beaches are relatively safe.</p>
-        <p>The following graph shows the trend of shark attacks in both Australia and Victoria from 2010 to
-            2018.</p>
-        <div id="atks" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
-
-        <hr/>
-        <br/>
         <h2>Tips to Beach Dangers</h2>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
@@ -224,7 +213,36 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
+
+        <br/>
+        <hr/>
+        <div>
+            <h1>First-aid Instructions</h1>
+            <b>Call 000 if you see someone is drowning</b>. Do the following while waiting for the professionals. <br/>
+
+            Drowning Treatment:
+            <ul>
+                <li>Check for any lifeguard at beach and if any notify them. If not, inform someone to call 000 immediately.</li>
+                <li>If alone, take the person out of the water and check for breathing by placing your ear near to the victim's
+                    mouth and nose. Also, check for any movement of person’s chest.</li>
+                <li>If no sign of breathing, check person's pulse for 10 seconds.</li>
+                <li>If there is no Pulse, start CPR immediately.</li>
+            </ul>
+            Child and Baby CPR:
+            <ul>
+                <li>Kneel beside the child or baby.</li>
+                <li>For children, place the heel of one hand on the center of the chest, then place the heel of the other
+                    hand on top of the first hand, and lace your fingers together. Deliver 30 quick compressions that are
+                    each about 2 inches deep.</li>
+
+                <li>For infants, use 2 fingers to deliver 30 quick compressions that are each about 1.5 inches deep.
+                    Keep doing the same until you see child breathing.</li>
+            </ul>
+        </div>
     </div>
+    </div>
+    <div class="gtco-section" style="padding-top: 0">
+        <div th:include="fragments/readmore"></div>
     </div>
     <div th:replace="fragments/footer :: footer">...</div>
 </div>
@@ -233,7 +251,6 @@
 <script src="https://code.highcharts.com/modules/series-label.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
-<script th:src="@{/js/sharkAtkJs.js}"></script>
 <div class="gototop js-top">
     <a href="#" class="js-gotop">
         <span class="icon">

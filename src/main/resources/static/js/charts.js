@@ -71,25 +71,19 @@ $(document).ready(function () {
 
         // get uv data
         $.get(uv_api_url, function (uv) {
-            var isoDate = new Date(uv.date_iso);
-            var uv_date = isoDate.toLocaleDateString('en-GB');
             var uv_value = uv.value;
             var uv_level = '';
 
             switch (true) {
-                case uv_value <= 2: uv_level = 'Low'; $("#uv-warning").addClass('alert-success'); break;
-                case uv_value <= 5: uv_level = 'Moderate'; $("#uv-warning").addClass('alert-warning'); break;
-                case uv_value <= 7: uv_level = 'High'; $("#uv-warning").addClass('alert-danger'); break;
-                case uv_value <= 10: uv_level = 'Very High'; $("#uv-warning").addClass('alert-danger'); break;
-                case uv_value > 10: uv_level = 'Extreme'; $("#uv-warning").addClass('alert-danger'); break;
+                case uv_value <= 2: uv_level = 'Low'; $("#uv-warning").addClass('text-success'); break;
+                case uv_value <= 5: uv_level = 'Moderate'; $("#uv-warning").addClass('text-warning'); break;
+                case uv_value <= 7: uv_level = 'High'; $("#uv-warning").addClass('text-danger'); break;
+                case uv_value <= 10: uv_level = 'Very High'; $("#uv-warning").addClass('text-danger'); break;
+                case uv_value > 10: uv_level = 'Extreme'; $("#uv-warning").addClass('text-danger'); break;
             }
 
 
-            var alert_content = '<p>The UV index for ' + beachName + ' at ' + uv_date + ' is ' + uv_value + ' (' + uv_level +'). Please click' +
-                '<a href="/uv_instructions"> here</a> for detailed instructions for protecting yourself.</p>';
-            $("#uv-warning").append(alert_content);
-
-
+            document.getElementById("uv-warning").innerHTML = uv_value + ' (' + uv_level + ')';
 
         });
     });

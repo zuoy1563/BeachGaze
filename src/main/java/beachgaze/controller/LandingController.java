@@ -28,7 +28,7 @@ public class LandingController {
     @RequestMapping("/tips")
     public String tips(Model model) {
         model.addAttribute("page", "tips");
-        return "home/tips";
+        return "iteration3/home/tips";
     }
 
 
@@ -71,6 +71,12 @@ public class LandingController {
         }
         else
             return "error";
+    }
+
+    @RequestMapping("/iteration2/tips")
+    public String ite2tips(Model model) {
+        model.addAttribute("page", "tips");
+        return "home/tips";
     }
 
     @RequestMapping("/iteration2/beaches")

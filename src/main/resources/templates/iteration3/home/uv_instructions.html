@@ -7,7 +7,7 @@
 -->
 <html>
 <head th:include="fragments/head :: headerFragment">
-    <title id="pageTitle">Historic Accidents - BeachGaze</title>
+    <title id="pageTitle">UV Instructions - BeachGaze</title>
     <!-- other elements you want to reference in your layout -->
 </head>
 <body>
@@ -17,19 +17,18 @@
 <script src="https://code.highcharts.com/modules/series-label.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <div class="gtco-loader"></div>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
 <div id="page">
     <nav class="gtco-nav" role="navigation">
         <div th:include="fragments/navbar"></div>
     </nav>
-    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-size: 100% 50%">
+    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-size: 100% 40vh">
         <div class="overlay"></div>
         <div class="gtco-container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center">
                     <div class="display-t">
                         <div class="display-tc animate-box" data-animate-effect="fadeIn">
-                            <h1>Historic accidents</h1>
+                            <h1>UV Instructions</h1>
                         </div>
                     </div>
                 </div>
@@ -64,6 +63,8 @@
             would like to visit beaches at that time, please do apply sunscreens and minimise your time in the sun between 10
             a.m and 4 p.m.</p>
 
+            <hr/>
+            <br/>
             <!--Tips-->
             <h1>Some Tips to Help Protect You and Your Children</h1>
             <h2>Wear Sun-protective Clothing if Possible</h2>
@@ -102,34 +103,8 @@
         </div>
     </div>
     <!--Learn more section-->
-    <div class="gtco-section">
-        <div class="container">
-            <h1>Read More</h1>
-            <div class="readMoreBox">
-                <a href="/statistics">
-                    <div class="card">
-                        <div class="font-icon" style="text-align: center">
-                            <i class="fas fa-chart-line" style="font-size: 9em;color: #3e93cf"></i>
-                        </div>
-                        <div style="padding: 2px 16px; background-color: #3e93cf; text-align: center">
-                            <b style="color: white">Statistics</b>
-                            <p style="color: white">Click to learn statistics on common beach dangers.</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="/first_aid">
-                    <div class="card">
-                        <div class="font-icon" style="text-align: center">
-                            <i class="fas fa-first-aid" style="font-size: 9em;color: #3e93cf"></i>
-                        </div>
-                        <div style="padding: 2px 16px; background-color: #3e93cf; text-align: center">
-                            <b style="color: white">First-aid Guide</b>
-                            <p style="color: white">Click to learn useful first-aid skills for protecting your children.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
+    <div class="gtco-section" style="padding-top: 0">
+        <div th:include="fragments/readmore"></div>
     </div>
     <div th:replace="fragments/footer :: footer">...</div>
 </div>

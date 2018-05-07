@@ -7,7 +7,7 @@
 -->
 <html>
 <head th:include="fragments/head :: headerFragment">
-    <title id="pageTitle">Historic Accidents - BeachGaze</title>
+    <title id="pageTitle">Learn From Accidents - BeachGaze</title>
     <!-- other elements you want to reference in your layout -->
 </head>
 <body>
@@ -22,14 +22,14 @@
     <nav class="gtco-nav" role="navigation">
         <div th:include="fragments/navbar"></div>
     </nav>
-    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-size: 100% 50%">
+    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-size: 100% 40vh">
         <div class="overlay"></div>
         <div class="gtco-container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center">
                     <div class="display-t">
                         <div class="display-tc animate-box" data-animate-effect="fadeIn">
-                            <h1>Historic accidents</h1>
+                            <h1>Learn From Accidents</h1>
                         </div>
                     </div>
                 </div>
@@ -41,9 +41,9 @@
             <div class="container-fluid">
                 <div class="col-md-12">
                     <div class="row">
-                        <h2>Historic Accidents Around Beaches</h2>
+                        <h2>Learn From Historic Accidents Around Beaches</h2>
                         <p>Although it sounds scary that there are many accidents throughout the year, by reading the
-                        following cases, it could understood that more often than not, accidents are actually caused by
+                        following cases, it could be understood that more often than not, accidents are actually caused by
                         human errors. The accident rates can significantly drop if more attentions can be paid.</p>
                         <div class="timeline timeline-single-column">
                             <!-- Time label 1 -->
@@ -175,34 +175,8 @@
         </div>
     </div>
     <!--Learn more section-->
-    <div class="gtco-section">
-        <div class="container">
-            <h1>Read More</h1>
-            <div class="readMoreBox">
-                <a href="/statistics">
-                <div class="card">
-                    <div class="font-icon" style="text-align: center">
-                    <i class="fas fa-chart-line" style="font-size: 9em;color: #3e93cf"></i>
-                    </div>
-                    <div style="padding: 2px 16px; background-color: #3e93cf; text-align: center">
-                        <b style="color: white">Statistics</b>
-                        <p style="color: white">Click to learn statistics on common beach dangers.</p>
-                    </div>
-                </div>
-                </a>
-                <a href="/first_aid">
-                <div class="card">
-                    <div class="font-icon" style="text-align: center">
-                        <i class="fas fa-first-aid" style="font-size: 9em;color: #3e93cf"></i>
-                    </div>
-                    <div style="padding: 2px 16px; background-color: #3e93cf; text-align: center">
-                        <b style="color: white">First-aid Guide</b>
-                        <p style="color: white">Click to learn useful first-aid skills for protecting your children.</p>
-                    </div>
-                </div>
-                </a>
-            </div>
-        </div>
+    <div class="gtco-section" style="padding-top: 0">
+        <div th:include="fragments/readmore"></div>
     </div>
     <div th:replace="fragments/footer :: footer">...</div>
 </div>

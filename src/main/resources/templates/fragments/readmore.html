@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+
+<div class="container" xmlns:th="http://www.w3.org/1999/xhtml">
+<h1>Read More</h1>
+<div class="readMoreBox">
+    <a href="/statistics" th:style="${page=='statistics'}? 'display:none'">
+        <div class="card">
+            <div class="font-icon" style="text-align: center">
+                <i class="fas fa-chart-line" style="font-size: 9em;color: #3e93cf"></i>
+            </div>
+            <div style="padding: 2px 16px; background-color: #3e93cf; text-align: center">
+                <b style="color: white">Statistics</b>
+                <p style="color: white">Click to learn statistics on common beach dangers.</p>
+            </div>
+        </div>
+    </a>
+    <a href="/tips" th:style="${page=='tips'}? 'display:none'">
+        <div class="card">
+            <div class="font-icon" style="text-align: center">
+                <i class="fas fa-first-aid" style="font-size: 9em;color: #3e93cf"></i>
+            </div>
+            <div style="padding: 2px 16px; background-color: #3e93cf; text-align: center">
+                <b style="color: white">Safety Tips</b>
+                <p style="color: white">Click to learn useful skills for dealing with different beach dangers.</p>
+            </div>
+        </div>
+    </a>
+    <a href="/accidents" th:style="${page=='accidents'}? 'display:none'">
+        <div class="card">
+            <div class="font-icon" style="text-align: center">
+                <i class="fas fa-graduation-cap" style="font-size: 9em;color: #3e93cf"></i>
+            </div>
+            <div style="padding: 2px 16px; background-color: #3e93cf; text-align: center">
+                <b style="color: white">Learn From Accidents</b>
+                <p style="color: white">Click to see what could be learned from historic accidents.</p>
+            </div>
+        </div>
+    </a>
+    <a href="/uv_instructions" th:style="${page=='UV Instructions'}? 'display:none'">
+        <div class="card">
+            <div class="font-icon" style="text-align: center">
+                <i class="fas fa-sun" style="font-size: 9em;color: #3e93cf"></i>
+            </div>
+            <div style="padding: 2px 16px; background-color: #3e93cf; text-align: center">
+                <b style="color: white">UV Instructions</b>
+                <p style="color: white">Click to learn how to protect yourself and your children against UV rays.</p>
+            </div>
+        </div>
+    </a>
+</div>
+</div>

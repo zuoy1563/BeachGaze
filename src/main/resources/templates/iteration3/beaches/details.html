@@ -13,12 +13,13 @@
 <body>
 
 <div class="gtco-loader"></div>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
 
 <div id="page">
     <nav class="gtco-nav" role="navigation">
         <div th:include="fragments/navbar"></div>
     </nav>
-    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-size: 100% 50%">
+    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-size: 100% 40vh">
         <div class="overlay"></div>
         <div class="gtco-container">
             <div class="row">
@@ -37,17 +38,21 @@
         <div class="container">
             <a href="/beaches">Back to List</a><br/>
 
-            <!--UV alert box-->
-            <div class="alert alert-dismissible" id="uv-warning">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            </div>
-
             <!--Title and rating-->
             <h1 id="beachName" th:text="${beach.name}" style="display: inline">...</h1> &nbsp;&nbsp;
             <div class="tooltip" style="font-weight: bold">Rating:
                 <span class="tooltiptext">According to surrounded infrastructure and water quality. A higher rating is better.</span>
             </div>
-            <b th:text="${beach.rating} + '/5'"></b><br/>
+            <b th:text="${beach.rating} + '/5'"></b> &nbsp;&nbsp;
+            <div class="tooltip">
+                <a href="/uv_instructions">
+                    <i class="fas fa-sun" style="color: #f88c3a"></i>
+                    <b id="uv-warning"></b>
+                </a>
+                <span class="tooltiptext">Please click to see the detailed instructions against UV rays.</span>
+            </div>
+
+            <br/>
 
 
 

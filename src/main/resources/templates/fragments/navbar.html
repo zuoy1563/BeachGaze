@@ -13,7 +13,18 @@
                 <li th:class="${page=='beaches'}? 'active'">
                     <a href="/beaches">Find a Beach</a>
                 </li>
-                <li th:class="${page=='tips'}? 'active'"><a href="/tips">Safety Tips</a></li>
+                <li class="has-dropdown" th:classappend = "${page=='tips' || page == 'accidents'
+                                || page == 'statistics' || page == 'uv_instructions'
+                                || page == 'quizzes'}? 'active'">
+                    <a href="#">Beach Safety</a>
+                    <ul class="dropdown">
+                        <li><a href="/accidents">Learn From Accidents</a></li>
+                        <li><a href="/statistics">Statistics</a></li>
+                        <li><a href="/tips">Safety Tips</a></li>
+                        <li><a href="/uv_instructions">UV Instructions</a></li>
+                        <li><a href="/quizzes">Safety Quizzes</a></li>
+                    </ul>
+                </li>
                 <li th:class="${page=='about'}? 'active'"><a href="/about">About</a></li>
             </ul>
         </div>
