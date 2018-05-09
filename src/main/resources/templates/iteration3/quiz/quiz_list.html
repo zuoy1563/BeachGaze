@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--
+	Greatness by FreeHTML5.co
+	Twitter: http://twitter.com/fh5co
+	URL: http://FreeHTML5.co
+-->
+<html>
+<head th:include="fragments/head :: headerFragment">
+    <title id="pageTitle">Quiz List - BeachGaze</title>
+    <!-- other elements you want to reference in your layout -->
+</head>
+<body>
+
+<div class="gtco-loader"></div>
+
+<div id="page">
+    <nav class="gtco-nav" role="navigation">
+        <div th:include="fragments/navbar"></div>
+    </nav>
+    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-size: 100% 50%">
+        <div class="overlay"></div>
+        <div class="gtco-container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <div class="display-t">
+                        <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                            <h1>Quiz List</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- todo: contents -->
+    <div class="gtco-section">
+        <div class="container">
+            <h1>Quiz List</h1>
+            <dl>
+                <dt><a href="/quizzes/dangers">Quiz 1 - General Dangers</a></dt>
+                <dd>Take the quiz to answer questions on general beach dangers</dd>
+                <hr/>
+                <dt><a href="/quizzes/first_aid">Quiz 2 - First-aid</a></dt>
+                <dd>Take the quiz to answer questions on first-aid skills</dd>
+            </dl>
+        </div>
+    </div>
+    <div th:replace="fragments/footer :: footer">...</div>
+</div>
+<div th:include="fragments/jsFooter"></div>
+<div class="gototop js-top">
+    <a href="#" class="js-gotop">
+        <span class="icon">
+            <i class="icon-arrow-up" style="color: white"></i>
+        </span>
+    </a>
+</div>
+</body>
+</html>

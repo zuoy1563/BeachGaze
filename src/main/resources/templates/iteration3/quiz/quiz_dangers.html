@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--
+	Greatness by FreeHTML5.co
+	Twitter: http://twitter.com/fh5co
+	URL: http://FreeHTML5.co
+-->
+<html>
+<head th:include="fragments/head :: headerFragment">
+    <title id="pageTitle">Quiz 1 - General Dangers - BeachGaze</title>
+    <!-- other elements you want to reference in your layout -->
+</head>
+<body>
+
+<div class="gtco-loader"></div>
+
+<div id="page">
+    <nav class="gtco-nav" role="navigation">
+        <div th:include="fragments/navbar"></div>
+    </nav>
+    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-size: 100% 50%">
+        <div class="overlay"></div>
+        <div class="gtco-container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <div class="display-t">
+                        <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                            <h1 id="quizID">Quiz 1</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="gtco-section">
+        <div class="container">
+            <a class="btn btn-danger col-md-2" href="/quizzes">< Back to List</a>
+            <br/>
+            <br/>
+            <h2>Please choose the correct answer of the following questions:</h2>
+
+            <p>1. What should you do if caught in a rip?</p>
+            <fieldset id="group1">
+                <div class="radio">
+                    <label><input type="radio" name="group1" value="11">Swim directly to shore</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="group1" value="12">Float at your current location and attract attention</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="group1" value="13">Swim with the rip</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="group1" value="14">Swim parallel to the rip</label>
+                </div>
+            </fieldset>
+
+            <p>2. What should you do if encountering a shark?</p>
+            <fieldset id="group2">
+                <div class="radio">
+                    <label><input type="radio" name="group2" value="21">Do not take your eyes off the shark</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="group2" value="22">Do not make any sudden movements</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="group2" value="23">Try to get into a defensive position</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="group2" value="24">All of the above</label>
+                </div>
+            </fieldset>
+
+            <p>3. What should you not do when treating a sunburn?</p>
+            <fieldset id="group3">
+                <div class="radio">
+                    <label><input type="radio" name="group3" value="31">Pop the blisters</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="group3" value="32">Apply a cool compress to the sunburn</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="group3" value="33">Bathe the sunburn in cool water</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="group3" value="34">Apply moisturiser to the affected area</label>
+                </div>
+            </fieldset>
+
+            <p>4. What should you not do if stung by a non-tropical jellyfish?</p>
+            <fieldset id="group4">
+                <div class="radio">
+                    <label><input type="radio" name="group4" value="41">Leave the tentacles on the skin</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="group4" value="42">Wash off the remaining tentacles with seawater</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="group4" value="43">Immerse the affected area in hot water (cold if hot unavailable)</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="group4" value="44">Limit movement around the affected area</label>
+                </div>
+            </fieldset>
+
+            <p>5. What to do if stung by a tropical jellyfish?</p>
+            <fieldset id="group5">
+                <div class="radio">
+                    <label><input type="radio" name="group5" value="51">Pour vinegar over the wound</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="group5" value="52">Seek medical aid</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="group5" value="53">Apply pressure/immobilize the affected area</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="group5" value="54">All of the above</label>
+                </div>
+            </fieldset>
+
+            <div class="row">
+                <a class="btn btn-danger col-md-2" href="/quizzes">< Back to List</a>
+                <span class="col-md-1"></span>
+                <button type="button" id="click" class="btn btn-info col-md-2" data-toggle="modal" data-target="#myModal">Submit</button>
+            </div>
+
+
+            <!--Result Modal-->
+            <div class="modal fade" id="myModal" role="dialog" data-keyboard="false" data-backdrop="static" style="padding-top: 30vh">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Result</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="answer"></p>
+                    </div>
+                    <div id="footer1" class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                    <div id="footer2" class="modal-footer">
+                        <button id="back" type="button" class="btn btn-danger" data-dismiss="modal">< Back to List</button>
+                        <button id="redo" type="button" class="btn btn-info" data-dismiss="modal">Try Again</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div th:replace="fragments/footer :: footer">...</div>
+</div>
+<div th:include="fragments/jsFooter"></div>
+<script th:src="@{/js/quiz_process.js}"></script>
+<div class="gototop js-top">
+    <a href="#" class="js-gotop">
+        <span class="icon">
+            <i class="icon-arrow-up" style="color: white"></i>
+        </span>
+    </a>
+</div>
+</body>
+</html>

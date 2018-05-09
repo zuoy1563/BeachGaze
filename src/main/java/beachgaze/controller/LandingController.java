@@ -50,6 +50,24 @@ public class LandingController {
         return "iteration3/beaches/list";
     }
 
+    @RequestMapping("/quizzes")
+    public String quizzes(Model model) {
+        model.addAttribute("page", "quizzes");
+        return "iteration3/quiz/quiz_list";
+    }
+
+    @RequestMapping("/quizzes/dangers")
+    public String quizzesOnDangers(Model model) {
+        model.addAttribute("page", "quizzes");
+        return "iteration3/quiz/quiz_dangers";
+    }
+
+    @RequestMapping("/quizzes/first_aid")
+    public String quizzesOnFirstAid(Model model) {
+        model.addAttribute("page", "quizzes");
+        return "iteration3/quiz/quiz_first_aid";
+    }
+
     @RequestMapping("/accidents")
     public String accidents(Model model) {
         model.addAttribute("page", "accidents");
