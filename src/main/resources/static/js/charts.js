@@ -60,7 +60,7 @@ $(document).ready(function () {
     });
 
     // show UV index and instructions
-    var uv_api_url = 'http://api.openweathermap.org/data/2.5/uvi?appid=735607688818c4b88d0e04ec832208fc&';
+    var uv_api_url = 'https://api.openweathermap.org/data/2.5/uvi?appid=735607688818c4b88d0e04ec832208fc&';
     var beach_info_url = '/api/v1/beaches/' + spanValue;
     // get beach lat and lng
     $.get(beach_info_url, function (beach) {
