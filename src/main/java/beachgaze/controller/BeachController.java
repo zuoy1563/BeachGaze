@@ -29,26 +29,4 @@ public class BeachController {
         return beachRepository.findById(id).orElse(new Beach());
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-    public Beach update(@PathVariable Long id, @RequestBody Beach beach) {
-        //update beach info
-        beach.setId(id);
-        return beachRepository.save(beach);
-    }
-
-    @PostMapping
-    public Beach create(@RequestBody Beach beach) {
-        //create beach info
-        System.out.println("reached");
-        return beachRepository.save(beach);
-    }
-
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public Beach delete(@PathVariable Long id) {
-        //delete beach info
-        Beach beach = beachRepository.findById(id).orElse(new Beach());
-        if (beach.getId() != null)
-            beachRepository.delete(beach);
-        return beach;
-    }
 }

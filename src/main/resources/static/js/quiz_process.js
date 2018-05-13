@@ -106,5 +106,10 @@ document.getElementById("back").onclick = function () {
 };
 
 document.getElementById("redo").onclick = function () {
-    window.location.reload()
+    window.location.reload();
+};
+
+document.getElementById("ans").onclick = function () {
+    var url = window.location.href + "/answer";
+    window.location.replace(url);
 };
