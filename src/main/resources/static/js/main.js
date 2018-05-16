@@ -31,7 +31,7 @@
         var clone2 = $('.menu-2 > ul').clone();
         $('#gtco-offcanvas').append(clone2);
 
-        $('#gtco-offcanvas .has-dropdown').addClass('offcanvas-has-dropdown');
+        $('#gtco-offcanvas').find('.has-dropdown').addClass('offcanvas-has-dropdown');
         $('#gtco-offcanvas')
             .find('li')
             .removeClass('has-dropdown');
@@ -205,7 +205,7 @@
 
             $this
                 .closest('li')
-                .addClass('active')
+                .addClass('active');
 
             $this
                 .closest('.gtco-tabs')
@@ -257,7 +257,7 @@
         $('.js-counter').countTo({
             formatter: function (value, options) {
                 return value.toFixed(options.decimals);
-            },
+            }
         });
     };
 
