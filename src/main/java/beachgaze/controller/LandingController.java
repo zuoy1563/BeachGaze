@@ -8,6 +8,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * This controller is used to match urls to different pages.
+ *
+ * Author: Yue Zuo
+ */
 @Controller
 public class LandingController {
     @Autowired
@@ -17,12 +22,6 @@ public class LandingController {
     public String ite2Landing(Model model) {
         model.addAttribute("page", "index");
         return "home/index";
-    }
-
-    @RequestMapping("/about")
-    public String about(Model model) {
-        model.addAttribute("page", "about");
-        return "home/about";
     }
 
     @RequestMapping("/tips")
@@ -104,29 +103,6 @@ public class LandingController {
         if (beach.getId() != null) {
             model.addAttribute("beach", beach);
             return "iteration3/beaches/details";
-        }
-        else
-            return "error";
-    }
-
-    @RequestMapping("/iteration2/tips")
-    public String ite2tips(Model model) {
-        model.addAttribute("page", "tips");
-        return "home/tips";
-    }
-
-    @RequestMapping("/iteration2/beaches")
-    public String ite2Beaches(Model model) {
-        model.addAttribute("page", "beaches");
-        return "iteration2/beaches/list";
-    }
-
-    @RequestMapping("/iteration2/beaches/{id}")
-    public String ite2BeachDetails(@PathVariable Long id, Model model) {
-        Beach beach = beachRepository.findById(id).orElse(new Beach());
-        if (beach.getId() != null) {
-            model.addAttribute("beach", beach);
-            return "iteration2/beaches/details";
         }
         else
             return "error";

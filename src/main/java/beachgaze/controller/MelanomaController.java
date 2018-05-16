@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * This rest api is for exchanging Melanoma information with database.
+ *
+ * Author: Yue Zuo
+ */
 @RestController
 @RequestMapping("/api/v1/melanoma")
 public class MelanomaController {
