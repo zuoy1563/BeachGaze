@@ -61,22 +61,10 @@ public class LandingController {
         return "iteration3/quiz/quiz_dangers";
     }
 
-    @RequestMapping("/quizzes/dangers/answer")
-    public String quizzesOnDangersAnswer(Model model) {
-        model.addAttribute("page", "quizzes answer");
-        return "iteration3/quiz/quiz_dangers_ans";
-    }
-
     @RequestMapping("/quizzes/first_aid")
     public String quizzesOnFirstAid(Model model) {
         model.addAttribute("page", "quizzes");
         return "iteration3/quiz/quiz_first_aid";
-    }
-
-    @RequestMapping("/quizzes/first_aid/answer")
-    public String quizzesOnFirstAidAnswer(Model model) {
-        model.addAttribute("page", "quizzes answer");
-        return "iteration3/quiz/quiz_first_aid_ans";
     }
 
     @RequestMapping("/accidents")

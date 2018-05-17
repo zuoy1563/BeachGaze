@@ -1,18 +1,20 @@
+window.dangerAns = [14,24,31,41,54];
+window.faAns = [61,72,82,92,101];
+
 document.getElementById("click").onclick = function () {
     // initialise element status
     document.getElementById("footer1").removeAttribute("style");
     document.getElementById("footer2").removeAttribute("style");
 
     // get options
-    var quizID = 0;
     var optionsSelected = [];
     var quizName = document.getElementById("quizID").innerHTML;
     if (quizName === "Quiz 1") {
-        quizID = 1;
+        window.quizID = 1;
         optionsSelected = getOptions(0);
     }
     else {
-        quizID = 2;
+        window.quizID = 2;
         optionsSelected = getOptions(5);
     }
 
@@ -62,40 +64,22 @@ function getOptions(startPoint) {
 
 function getDangerQuizScore(options) {
     var score = 0;
-    if (options[0] == 14) {
-        score = score + 20;
-    }
-    if (options[1] == 24) {
-        score = score + 20;
-    }
-    if (options[2] == 31) {
-        score = score + 20;
-    }
-    if (options[3] == 41) {
-        score = score + 20;
-    }
-    if (options[4] == 54) {
-        score = score + 20;
+    for (var i = 0; i < options.length; i++) {
+        if (options[i] == dangerAns[i]) {
+            score = score + 20;
+        }
     }
     return score;
 }
 
+
+
 function getFirstAidQuizScore(options) {
     var score = 0;
-    if (options[0] == 61) {
-        score = score + 20;
-    }
-    if (options[1] == 72) {
-        score = score + 20;
-    }
-    if (options[2] == 82) {
-        score = score + 20;
-    }
-    if (options[3] == 92) {
-        score = score + 20;
-    }
-    if (options[4] == 101) {
-        score = score + 20;
+    for (var i = 0; i < options.length; i++) {
+        if (options[i] == faAns[i]) {
+            score = score + 20;
+        }
     }
     return score;
 }
@@ -110,6 +94,43 @@ document.getElementById("redo").onclick = function () {
 };
 
 document.getElementById("ans").onclick = function () {
-    var url = window.location.href + "/answer";
-    window.location.replace(url);
+    //var url = window.location.href + "/answer";
+    //window.location.replace(url);
+
+    $('.container').each(function () {
+        $(this).find('input').attr("disabled",true);
+    });
+
+    // highlight selected answer
+    $('input[type="radio"]:checked').each(function () {
+        var label = $(this).closest("label");
+        //text = $(label).text();
+        //window.alert(text);
+        label.addClass("quiz-text-bg-danger");
+    });
+
+    // highlight correct answer
+    var quizAns;
+    if (quizID == 1) {
+        quizAns = dangerAns;
+    }
+    else {
+        quizAns = faAns;
+    }
+    $('input[type="radio"]').each(function () {
+        var elementID = $(this).val();
+        for (var i = 0; i < quizAns.length; i++) {
+            if (elementID == quizAns[i]) {
+                var label = $(this).closest("label");
+                if (label.hasClass("quiz-text-bg-danger")) {
+                    label.removeClass("quiz-text-bg-danger");
+                }
+                label.addClass("quiz-text-bg-success");
+            }
+        }
+    });
+
+    $('#click').css("display","none");
+    $('#again').css("display","");
+
 };

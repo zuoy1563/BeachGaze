@@ -2737,3 +2737,20 @@ font color in buttons
     padding-top: 1%;
     padding-bottom: 1%;
 }
+
+/* Font settings for quizzes*/
+.quiz-text-bg-success {
+    background-color: #ecffde;
+    border:2px solid #c8e2c7;
+    border-radius:10px;
+    -moz-border-radius:10px; /* Old Firefox */
+    padding-right: 1%;
+}
+
+.quiz-text-bg-danger {
+    background-color: #fddad9;
+    border:2px solid #e8b3b1;
+    border-radius:10px;
+    -moz-border-radius:10px; /* Old Firefox */
+    padding-right: 1%;
+}
