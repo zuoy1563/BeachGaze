@@ -11,7 +11,8 @@
     <!-- other elements you want to reference in your layout -->
 </head>
 <body>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css"
+      integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
 
 <div class="gtco-loader"></div>
 
@@ -19,7 +20,8 @@
     <nav class="gtco-nav" role="navigation">
         <div th:include="fragments/navbar"></div>
     </nav>
-    <header id="gtco-header" class="gtco-cover" role="banner" style="background-image: url(images/homeImages/wave.jpg);">
+    <header id="gtco-header" class="gtco-cover" role="banner"
+            style="background-image: url(images/homeImages/wave.jpg);height: 100vh">
         <div class="gtco-container">
             <div class="row">
                 <div class="col-md-12 col-md-offset-0 text-center">
@@ -30,22 +32,19 @@
                             <p>
                                 <a href="/beaches" class="btn btn-primary btn-lg">Search for a Safe Beach</a>
                             </p>
-                            <!--
-                            <a class="ct-btn-scroll ct-js-btn-scroll" href="#gtco-counter" style="padding-bottom: 20px">
-                                <img alt="Arrow Down Icon" src="https://www.solodev.com/assets/anchor/arrow-down.png"></a>
-                                -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div style="position: absolute; bottom: 0; left: 50%;">
+        <div style="position: absolute; bottom: 0; left: 50%; z-index: 99">
             <div style="position: relative; left: -50%;">
-                <a class="position: absolute; bottom: 0px;" href="#gtco-counter" id="scroll-down">
+                <a href="#gtco-counter" id="scroll-down">
                     <img alt="Arrow Down Icon" src="images/homeImages/arrow-down.png">
                 </a>
             </div>
         </div>
+
     </header>
 
     <div id="gtco-counter" class="gtco-bg gtco-cover gtco-counter"
@@ -187,39 +186,6 @@
     </div>
 </div>
 
-<!--
-<div id="gtco-subscribe">
-    <div class="gtco-container">
-        <div class="row animate-box">
-            <div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-                <h2>Subscribe</h2>
-                <p>Be the first to know about the news.</p>
-            </div>
-        </div>
-        <div class="row animate-box">
-            <div class="col-md-12">
-                <form class="form-inline">
-                    <div class="col-md-4 col-sm-4">
-                        <div class="form-group">
-                            <label for="email" class="sr-only">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Your email">
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4">
-                        <div class="form-group">
-                            <label for="name" class="sr-only">Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Your name">
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-4">
-                        <button type="submit" class="btn btn-info btn-block">Subscribe</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
--->
 <div th:replace="fragments/footer :: footer">...</div>
 </div>
 <div th:include="fragments/jsFooter"></div>
