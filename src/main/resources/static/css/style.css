@@ -278,8 +278,6 @@ h1, h2, h3, h4, h5, h6, figure {
 #gtco-counter,
 .gtco-bg {
     background-size: cover;
-    background-position: top center;
-    background-repeat: no-repeat;
     position: relative;
 }
 
@@ -359,16 +357,34 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .gtco-cover {
     background-image: url(images/homeImages/img_bg_1.jpg);
-    background-position: center center;
+    background-position: top center;
     background-size: cover;
     background-attachment: fixed;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height:100%;
+    width:100%;
+}
+
+.gtco-cover-home {
+    background-image: url(images/homeImages/wave.jpg);
+    background-position: top center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height:100%;
+    width:100%;
+}
+
+@media screen and (max-width: 768px) {
+    .gtco-cover-home {
+        background-image: url(images/homeImages/wave-small.jpg);
+    }
 }
 
 .gtco-cover-about {
@@ -437,7 +453,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 @media screen and (max-width: 768px) {
     .gtco-cover {
-        height: 600px;
+
     }
 }
 
@@ -463,7 +479,6 @@ h1, h2, h3, h4, h5, h6, figure {
 @media screen and (max-width: 768px) {
     .gtco-cover .display-t,
     .gtco-cover .display-tc {
-        height: 600px;
     }
 }
 
@@ -2739,6 +2754,11 @@ font color in buttons
 }
 
 /* Font settings for quizzes*/
+.quiz-text-question {
+    color: #00379e;
+    margin-bottom: 0;
+}
+
 .quiz-text-bg-success {
     background-color: #ecffde;
     border:2px solid #c8e2c7;
