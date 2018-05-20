@@ -44,7 +44,7 @@ $(document).ready(function () {
                         label: {
                             enabled: false
                         },
-                        name: 'Routine Result'
+                        name: 'Results of bacteria contained in per 100mL sea water'
                     }
                 },
                 title: {
@@ -55,6 +55,13 @@ $(document).ready(function () {
                 },
                 series: [{
                     data: filteredData
+                },{
+                    color:'red',
+                    name: 'Recommended upper limit of enterococci',
+                    dashStyle:'solid',
+                    marker: {
+                        enabled: false
+                    }
                 }]
             });
     });
