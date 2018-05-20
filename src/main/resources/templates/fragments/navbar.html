@@ -1,0 +1,32 @@
+<div class="gtco-container" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="row">
+        <div class="col-xs-5">
+            <div class="row">
+                <div id="gtco-logo">
+                    <a href="/">BeachGaze</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-7 text-right menu-1">
+            <ul>
+                <li th:class="${page=='beaches'}? 'active'">
+                    <a href="/beaches">Find a Beach</a>
+                </li>
+                <li class="has-dropdown" th:classappend = "${page=='tips' || page == 'accidents'
+                                || page == 'statistics' || page == 'UV Instructions'
+                                || page == 'quizzes'
+                                || page == 'First-aid Instructions'}? 'active'">
+                    <a href="#">Beach Safety</a>
+                    <ul class="dropdown">
+                        <li><a href="/first_aid_instructions">First-aid Instructions</a></li>
+                        <li><a href="/accidents">Learn From Accidents</a></li>
+                        <li><a href="/quizzes">Safety Quizzes</a></li>
+                        <li><a href="/tips">Safety Tips</a></li>
+                        <li><a href="/statistics">Statistics</a></li>
+                        <li><a href="/uv_instructions">UV Instructions</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

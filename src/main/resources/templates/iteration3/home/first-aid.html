@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--
+	Greatness by FreeHTML5.co
+	Twitter: http://twitter.com/fh5co
+	URL: http://FreeHTML5.co
+-->
+<html>
+<head th:include="fragments/head :: headerFragment">
+    <title id="pageTitle">UV Instructions - BeachGaze</title>
+    <!-- other elements you want to reference in your layout -->
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<div class="gtco-loader"></div>
+<div id="page">
+    <nav class="gtco-nav" role="navigation">
+        <div th:include="fragments/navbar"></div>
+    </nav>
+    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-size: 100% 40vh">
+        <div class="overlay"></div>
+        <div class="gtco-container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <div class="display-t">
+                        <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                            <h1>UV Instructions</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="gtco-section" style="padding-bottom: 0">
+        <div class="gtco-container">
+            <div>
+                <h1>First-aid Instructions</h1>
+                <b>Call 000 if you see someone is drowning</b>. Do the following while waiting for the professionals. <br/>
+
+                Drowning Treatment:
+                <ul>
+                    <li>Check for any lifeguard at beach and if any notify them. If not, inform someone to call 000 immediately.</li>
+                    <li>If alone, take the person out of the water and check for breathing by placing your ear near to the victim's
+                        mouth and nose. Also, check for any movement of person’s chest.</li>
+                    <li>If no sign of breathing, check person's pulse for 10 seconds.</li>
+                    <li>If there is no Pulse, start CPR immediately.</li>
+                    <li>Place the heel of one hand on the patient’s chest.</li>
+                    <li>Keep your arms locked (straight).</li>
+                    <li>Push down hard and fast 30 times. (use two hands if finding it difficult to push down with one hand)</li>
+                    <li>Each compression should push the patient’s chest down by roughly one-third.</li>
+                    <li>Pinch the nose of the patient closed. </li>
+                    <li>Cover the patient's mouth with yours to create an airtight seal.</li>
+                    <li>Blow gently and steadily into their mouth 2 times, each for 1 second.</li>
+                    <li>Check for any reaction from the patient.</li>
+                    <li>If patient starts responding, place them in the recovery position (lying on their side with one hand supporting their head)</li>
+                    <li>If no response, continue compressions and breathes until further help arrives.</li>
+                </ul>
+
+                CPR for babies
+                <ul>
+                    <li>Follow steps for CPR as above. However, use two fingers instead of the palm when doing chest compressions.</li>
+                </ul>
+
+                <img src="images/dangers/first_aid.jpg" alt="Sunscreen" class="center">
+            </div>
+            <div style="padding-bottom: 50px"></div>
+        </div>
+    </div>
+    <!--Learn more section-->
+    <div class="gtco-section" style="padding-top: 0">
+        <div th:include="fragments/readmore"></div>
+    </div>
+    <div th:replace="fragments/footer :: footer">...</div>
+</div>
+
+
+<div class="gototop js-top">
+    <a href="#" class="js-gotop">
+        <span class="icon">
+            <i class="icon-arrow-up" style="color: white"></i>
+        </span>
+    </a>
+</div>
+<div th:include="fragments/jsFooter"></div>
+
+</body>
+</html>
