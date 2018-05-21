@@ -4,8 +4,8 @@
 <div class="gtco-container" xmlns:th="http://www.w3.org/1999/xhtml">
     <h1>Read More</h1>
     <div class="readMoreBox">
-        <div id="tips" class="col-md-4 col-sm-4" style="padding-bottom: 5%">
-            <a href="/tips" th:style="${page=='tips'}? 'display:none'">
+        <div id="tips" class="col-md-4 col-sm-4" style="padding-bottom: 5%" th:if="${page!='tips'}">
+            <a href="/tips">
                 <div class="card">
                     <div class="font-icon" style="text-align: center">
                         <i class="fab fa-leanpub" style="font-size: 9em;color: #3e93cf"></i>
@@ -17,8 +17,8 @@
                 </div>
             </a>
         </div>
-        <div id="fai" class="col-md-4 col-sm-4" style="padding-bottom: 5%">
-            <a href="/first_aid_instructions" th:style="${page=='First-aid Instructions'}? 'display:none'">
+        <div id="fai" class="col-md-4 col-sm-4" style="padding-bottom: 5%" th:if="${page!='First-aid Instructions'}">
+            <a href="/first_aid_instructions">
                 <div class="card">
                     <div class="font-icon" style="text-align: center">
                         <i class="fas fa-first-aid" style="font-size: 9em;color: #3e93cf"></i>
@@ -30,8 +30,8 @@
                 </div>
             </a>
         </div>
-        <div id="acc" class="col-md-4 col-sm-4" style="padding-bottom: 5%">
-            <a href="/accidents" th:style="${page=='accidents'}? 'display:none'">
+        <div id="acc" class="col-md-4 col-sm-4" style="padding-bottom: 5%" th:if="${page!='accidents'}">
+            <a href="/accidents">
                 <div class="card">
                     <div class="font-icon" style="text-align: center">
                         <i class="fas fa-graduation-cap" style="font-size: 9em;color: #3e93cf"></i>
@@ -43,8 +43,8 @@
                 </div>
             </a>
         </div>
-        <div id="uvi" class="col-md-4 col-sm-4" style="padding-bottom: 5%">
-            <a href="/uv_instructions" th:style="${page=='UV Instructions'}? 'display:none'">
+        <div id="uvi" class="col-md-4 col-sm-4" style="padding-bottom: 5%" th:if="${page!='UV Instructions'}">
+            <a href="/uv_instructions">
                 <div class="card">
                     <div class="font-icon" style="text-align: center">
                         <i class="fas fa-sun" style="font-size: 9em;color: #3e93cf"></i>
