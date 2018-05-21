@@ -1,5 +1,5 @@
-window.dangerAns = [14,24,31,41,54];
-window.faAns = [61,72,82,92,101];
+window.dangerAns = [14, 24, 31, 41, 54];
+window.faAns = [61, 72, 82, 92, 101];
 
 document.getElementById("click").onclick = function () {
     // initialise element status
@@ -43,7 +43,7 @@ document.getElementById("click").onclick = function () {
             document.getElementById("answer").innerHTML = "Your score is " + score.toString() + ". Almost there!";
         }
         else {
-            document.getElementById("answer").innerHTML = "Unfortunately, your score is " + score.toString() + ". You" +
+            document.getElementById("answer").innerHTML = "Unfortunately, your score is " + score.toString() + ". You " +
                 "may want to take some time to look at the Safety Tips column to learn more.";
         }
     }
@@ -73,7 +73,6 @@ function getDangerQuizScore(options) {
 }
 
 
-
 function getFirstAidQuizScore(options) {
     var score = 0;
     for (var i = 0; i < options.length; i++) {
@@ -98,7 +97,7 @@ document.getElementById("ans").onclick = function () {
     //window.location.replace(url);
 
     $('.container').each(function () {
-        $(this).find('input').attr("disabled",true);
+        $(this).find('input').attr("disabled", true);
     });
 
     // highlight selected answer
@@ -130,7 +129,7 @@ document.getElementById("ans").onclick = function () {
         }
     });
 
-    $('#click').css("display","none");
-    $('#again').css("display","");
+    $('#click').css("display", "none");
+    $('#again').css("display", "");
 
 };
