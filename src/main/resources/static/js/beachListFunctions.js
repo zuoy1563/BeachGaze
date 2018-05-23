@@ -125,7 +125,6 @@ function initMap() {
             '<a href="/beaches/'+ data[i].id + '">Details</a>' + '</div>'])
 
         }
-        console.log(infoWindowContent);
 
         // Display multiple markers on a map
         var infoWindow = new google.maps.InfoWindow(), marker, i;

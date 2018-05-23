@@ -34,7 +34,6 @@ document.getElementById("click").onclick = function () {
             score = getFirstAidQuizScore(optionsSelected);
         }
 
-        console.log(score);
         document.getElementById("footer1").style.display = "none";
         if (score > 70) {
             document.getElementById("answer").innerHTML = "Congratulations! Your score is " + score.toString() + ".";

@@ -74,7 +74,6 @@ $(document).ready(function () {
         var beachLat = beach.latitude;
         var beachLng = beach.longitude;
         uv_api_url += 'lat=' + beachLat + '&lon=' + beachLng;
-        console.log(uv_api_url);
 
         // get uv data
         $.get(uv_api_url, function (uv) {
