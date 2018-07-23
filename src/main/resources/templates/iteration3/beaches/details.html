@@ -13,12 +13,13 @@
 <body>
 
 <div class="gtco-loader"></div>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
 
 <div id="page">
     <nav class="gtco-nav" role="navigation">
         <div th:include="fragments/navbar"></div>
     </nav>
-    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner">
+    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-size: 100% 40vh">
         <div class="overlay"></div>
         <div class="gtco-container">
             <div class="row">
@@ -35,11 +36,27 @@
     <!-- todo: contents -->
     <div class="gtco-section" id="section2">
         <div class="container">
+            <a href="/beaches">Back to List</a><br/>
+
+            <!--Title and rating-->
             <h1 id="beachName" th:text="${beach.name}" style="display: inline">...</h1> &nbsp;&nbsp;
             <div class="tooltip" style="font-weight: bold">Rating:
-                <span class="tooltiptext">According to surrounded infrastructure and water quality. Higher is better.</span>
+                <span class="tooltiptext">According to surrounded infrastructure and water quality. A higher rating is better.</span>
             </div>
-            <b th:text="${beach.rating} + '/5'"></b>
+            <b th:text="${beach.rating} + '/5'"></b> &nbsp;&nbsp;
+            <div class="tooltip">
+                <a href="/uv_instructions">
+                    <i class="fas fa-sun" style="color: #f88c3a"></i>
+                    <b id="uv-warning"></b>
+                </a>
+                <span class="tooltiptext">Please click to see the detailed instructions against UV rays.</span>
+            </div>
+
+            <br/>
+
+
+
+            <!--body-->
             <div class="row">
                 <div class="col-md-8">
                     <p th:utext="${beach.longDescription}">...</p>
@@ -64,11 +81,11 @@
                     </div>
 
                     <!-- Left and right controls -->
-                    <a class="left carousel-control" href="javascript:void(0);" data-slide="prev">
+                    <a class="left carousel-control" href="javascript:void(0)" data-slide="prev">
                         <span class="glyphicon glyphicon-chevron-left"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="right carousel-control" href="javascript:void(0);" data-slide="next">
+                    <a class="right carousel-control" href="javascript:void(0)" data-slide="next">
                         <span class="glyphicon glyphicon-chevron-right"></span>
                         <span class="sr-only">Next</span>
                     </a>
@@ -76,7 +93,7 @@
                     <hr/>
                 </div>
                 <div class="col-md-4">
-                    <div class="tooltip">When Gets Patrolled:
+                    <div class="tooltip">Lifeguard patrol schedule:
                         <span class="tooltiptext">Beaches only get patrolled on weekends and public holidays.</span>
                     </div>
                     <br/>
@@ -91,17 +108,15 @@
             <div class="row">
                 <div class="col-md-8">
                     <h1>Water Quality</h1>
-                    <p>Sea water quality is an important indicator for you to decide if the beach is suitable for you to
-                        take your children to swim or not.</p>
+                    <p>In the following graph, the <b style="color: cornflowerblue">blue</b> line indicates the historic results of bacteria contained in per 100mL sea
+                        water, while the <b style="color: red">red</b> line indicates the recommended upper limit of enterococci. If a point has value of 0, it does not mean that there is no bacteria in the sea water, but
+                        there is only few bacteria so that it cannot be observed clearly.</p>
+                    <div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+                    <p>Water quality is an important indicator for you to decide if the beach is suitable for you to take your children swimming or not.</p>
                     <p>EPA assess short-term water quality by comparing results against a dry weather enterococci trigger (>400 org/100mL).
                         Twice daily forecasts predict likelihood of stormwater pollution during and after rain that may cause high enterococci levels.</p>
-                    <p>In the following graph, the blue line indicates the historic results of bacteria contained in per 100mL sea
-                    water, while the red line indicates the recommended value (400 org/100mL). If a point has value of 0, it does not mean that there is no bacteria in the sea water, but
-                        there is only few bacteria so that it cannot be observed clearly.</p>
-                    <p>It is obvious that at most of time, the qualities of sea water are good. However, there are some extremely
-                        big numbers shown in the historical data as well. So it is significant to check the
-                        current water quality before your journey.</p>
-                    <div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+                    <p>It can be seen that most of the time, the water quality is quite good. However, there are some
+                        exceptions to the norm so it is best to check the most recent water quality results before visiting the beach.</p>
                 </div>
                 <div class="col-md-4">
 
@@ -118,7 +133,7 @@
 <script src="https://code.highcharts.com/modules/series-label.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
-<script th:src="@{/js/charts.js}"></script>
+<script th:src="@{/js/beachDetailPageFunctions.js}"></script>
 
 <div class="gototop js-top">
     <a href="#" class="js-gotop">

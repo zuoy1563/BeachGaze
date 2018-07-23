@@ -27,6 +27,7 @@
     outline: none;
 }
 
+/*noinspection ALL*/
 .slides,
 .slides > li,
 .flex-control-nav,
@@ -43,6 +44,7 @@
 /* ====================================================================================================================
  * BASE STYLES
  * ====================================================================================================================*/
+/*noinspection ALL*/
 .flexslider {
     margin: 0;
     padding: 0;
@@ -58,6 +60,7 @@
     display: block;
 }
 
+/*noinspection ALL*/
 .flexslider .slides:after {
     /*content: "\0020";*/
     display: block;
@@ -67,10 +70,12 @@
     height: 0;
 }
 
+/*noinspection ALL*/
 html[xmlns] .flexslider .slides {
     display: block;
 }
 
+/*noinspection ALL*/
 * html .flexslider .slides {
     height: 1%;
 }
@@ -82,6 +87,7 @@ html[xmlns] .flexslider .slides {
 /* ====================================================================================================================
  * DEFAULT THEME
  * ====================================================================================================================*/
+/*noinspection ALL*/
 .flexslider {
     margin: 0 0 60px;
     background: #ffffff;
@@ -97,6 +103,7 @@ html[xmlns] .flexslider .slides {
     box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
+/*noinspection ALL*/
 .flexslider .slides {
     zoom: 1;
 }
@@ -106,6 +113,7 @@ html[xmlns] .flexslider .slides {
     -moz-user-select: none;
 }
 
+/*noinspection ALL*/
 .flex-viewport {
     max-height: 2000px;
     -webkit-transition: all 1s ease;
@@ -115,6 +123,7 @@ html[xmlns] .flexslider .slides {
     transition: all 1s ease;
 }
 
+/*noinspection ALL*/
 .loading .flex-viewport {
     max-height: 300px;
 }
@@ -123,6 +132,7 @@ html[xmlns] .flexslider .slides {
     margin-right: 5px;
 }
 
+/*noinspection ALL*/
 .flex-direction-nav {
     *height: 0;
 }
@@ -157,37 +167,45 @@ html[xmlns] .flexslider .slides {
     text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
 }
 
+/*noinspection ALL*/
 .flex-direction-nav a.flex-next:before {
     content: '\f002';
 }
 
+/*noinspection ALL*/
 .flex-direction-nav .flex-prev {
     left: -50px;
 }
 
+/*noinspection ALL*/
 .flex-direction-nav .flex-next {
     right: -50px;
     text-align: right;
 }
 
+/*noinspection ALL*/
 .flexslider:hover .flex-direction-nav .flex-prev {
     opacity: 0.7;
     left: 10px;
 }
 
+/*noinspection ALL*/
 .flexslider:hover .flex-direction-nav .flex-prev:hover {
     opacity: 1;
 }
 
+/*noinspection ALL*/
 .flexslider:hover .flex-direction-nav .flex-next {
     opacity: 0.7;
     right: 10px;
 }
 
+/*noinspection ALL*/
 .flexslider:hover .flex-direction-nav .flex-next:hover {
     opacity: 1;
 }
 
+/*noinspection ALL*/
 .flex-direction-nav .flex-disabled {
     opacity: 0 !important;
     filter: alpha(opacity=0);
@@ -220,10 +238,12 @@ html[xmlns] .flexslider .slides {
     opacity: 1;
 }
 
+/*noinspection ALL*/
 .flex-pauseplay a.flex-play:before {
     content: '\f003';
 }
 
+/*noinspection ALL*/
 .flex-control-nav {
     width: 100%;
     position: absolute;
@@ -260,12 +280,14 @@ html[xmlns] .flexslider .slides {
     background: rgba(0, 0, 0, 0.7);
 }
 
+/*noinspection ALL*/
 .flex-control-paging li a.flex-active {
     background: #000;
     background: rgba(0, 0, 0, 0.9);
     cursor: default;
 }
 
+/*noinspection ALL*/
 .flex-control-thumbs {
     margin: 5px 0 0;
     position: static;
@@ -296,6 +318,7 @@ html[xmlns] .flexslider .slides {
     opacity: 1;
 }
 
+/*noinspection ALL*/
 .flex-control-thumbs .flex-active {
     opacity: 1;
     cursor: default;
@@ -305,11 +328,13 @@ html[xmlns] .flexslider .slides {
  * RESPONSIVE
  * ====================================================================================================================*/
 @media screen and (max-width: 860px) {
+    /*noinspection ALL*/
     .flex-direction-nav .flex-prev {
         opacity: 1;
         left: 10px;
     }
 
+    /*noinspection ALL*/
     .flex-direction-nav .flex-next {
         opacity: 1;
         right: 10px;

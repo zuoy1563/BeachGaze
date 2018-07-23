@@ -18,7 +18,7 @@
     <nav class="gtco-nav" role="navigation">
         <div th:include="fragments/navbar"></div>
     </nav>
-    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner">
+    <header id="gtco-header" class="gtco-cover gtco-cover-sm" role="banner" style="background-size: 100% 40vh">
         <div class="overlay"></div>
         <div class="gtco-container">
             <div class="row">
@@ -65,7 +65,7 @@
                         <div id="map_canvas" class="mapping" style="height: 700px"></div>
                     </div>
                     <div th:include="fragments/jsFooter"></div>
-                    <script th:src="@{/js/datacom.js}"></script>
+                    <script th:src="@{/js/beachListFunctions.js}"></script>
                     <script async defer
                             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9vGwFSuPk-v9UKnlrNFIuTarIdUly0Ng&callback=initMap">
                     </script>

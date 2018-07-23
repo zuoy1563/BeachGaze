@@ -1,5 +1,6 @@
 window.data = [];
 $(document).ready(function () {
+    // get all beaches from database
     var url = "/api/v1/beaches";
 
 
@@ -41,6 +42,7 @@ function searchByName() {
 }
 
 function sortList() {
+    // sort according to the selected option
     var optionText = $("#sort").find("option:selected").text();
     if (optionText === "Name") {
         sortByName(window.data)
@@ -124,23 +126,6 @@ function initMap() {
 
         }
         console.log(infoWindowContent);
-
-        // Info Window Content
-        /*
-        var infoWindowContent = [
-            ['<div class="info_content">' +
-            '<h3>London Eye</h3>' +
-            '<p>The London Eye is a giant Ferris wheel situated on the banks of the River Thames. The entire structure is 135 metres (443 ft) tall and the wheel has a diameter of 120 metres (394 ft).</p>' +        '</div>'],
-            ['<div class="info_content">' +
-            '<h3>Palace of Westminster</h3>' +
-            '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
-            '</div>'],
-                ['<div class="info_content">' +
-            '<h3>Palace of Westminster</h3>' +
-            '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
-            '</div>']
-        ];
-        */
 
         // Display multiple markers on a map
         var infoWindow = new google.maps.InfoWindow(), marker, i;

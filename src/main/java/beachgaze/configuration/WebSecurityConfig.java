@@ -17,6 +17,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        // define the username and password that could access the website here if you lock the website
         auth
                 .inMemoryAuthentication()
                 .passwordEncoder(new MyPasswordEncoder())
@@ -26,22 +27,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-    /*
+        // decide if you want to lock the website or not
+        /*
         http
                 .authorizeRequests()
                 .anyRequest()
                 .authenticated()
                 .and()
-                .httpBasic()
-                .and()
-                .csrf().disable();
+                .httpBasic();
          */
         http
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
-                .antMatchers("/**").permitAll()
-                .and()
-                .csrf().disable();
+                .antMatchers("/**").permitAll();
     }
 
 }
