@@ -1,4 +1,4 @@
-#Beachgaze - Spring Boot
+# Beachgaze - Spring Boot
 
 This project helps parents who would like to take their children to beaches in Melbourne understand the common beach dangers and provides some useful tips on how to deal with different dangers. Parents are also provided with beach and weather information, safety quizzes and visualised important data.
 
